@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 1",
+        "hp": 100,
+        "str": 50,
+        "atk": 75,
+        "def": 60
+    },
+    {
+        "id": 2,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 2",
+        "hp": 120,
+        "str": 60,
+        "atk": 80,
+        "def": 55
+    },
+    {
+        "id": 3,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 3",
+        "hp": 90,
+        "str": 45,
+        "atk": 70,
+        "def": 65
+    },
+    {
+        "id": 4,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 4",
+        "hp": 110,
+        "str": 55,
+        "atk": 85,
+        "def": 50
+    },
+    {
+        "id": 5,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 5",
+        "hp": 95,
+        "str": 40,
+        "atk": 65,
+        "def": 70
+    },
+    {
+        "id": 6,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 6",
+        "hp": 105,
+        "str": 50,
+        "atk": 75,
+        "def": 60
+    },
+    {
+        "id": 7,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 7",
+        "hp": 115,
+        "str": 60,
+        "atk": 80,
+        "def": 55
+    },
+    {
+        "id": 8,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 8",
+        "hp": 85,
+        "str": 45,
+        "atk": 70,
+        "def": 65
+    },
+    {
+        "id": 9,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 9",
+        "hp": 105,
+        "str": 55,
+        "atk": 85,
+        "def": 50
+    },
+    {
+        "id": 10,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 10",
+        "hp": 90,
+        "str": 40,
+        "atk": 65,
+        "def": 70
+    },
+    {
+        "id": 11,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 11",
+        "hp": 100,
+        "str": 50,
+        "atk": 75,
+        "def": 60
+    },
+    {
+        "id": 12,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 12",
+        "hp": 120,
+        "str": 60,
+        "atk": 80,
+        "def": 55
+    },
+    {
+        "id": 13,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 13",
+        "hp": 90,
+        "str": 45,
+        "atk": 70,
+        "def": 65
+    },
+    {
+        "id": 14,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 14",
+        "hp": 110,
+        "str": 55,
+        "atk": 85,
+        "def": 50
+    },
+    {
+        "id": 15,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 15",
+        "hp": 95,
+        "str": 40,
+        "atk": 65,
+        "def": 70
+    },
+    {
+        "id": 16,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 16",
+        "hp": 105,
+        "str": 50,
+        "atk": 75,
+        "def": 60
+    },
+    {
+        "id": 17,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 17",
+        "hp": 115,
+        "str": 60,
+        "atk": 80,
+        "def": 55
+    },
+    {
+        "id": 18,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 18",
+        "hp": 85,
+        "str": 45,
+        "atk": 70,
+        "def": 65
+    },
+    {
+        "id": 19,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 19",
+        "hp": 105,
+        "str": 55,
+        "atk": 85,
+        "def": 50
+    },
+    {
+        "id": 20,
+        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
+        "name": "Monster 20",
+        "hp": 90,
+        "str": 40,
+        "atk": 65,
+        "def": 70
+    }
+]

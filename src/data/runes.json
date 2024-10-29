@@ -1,0 +1,44 @@
+[
+    {
+        "icon": "rune1.png",
+        "name": "Rune of Strength",
+        "affix": [
+            {
+                "stat": "hp",
+                "value": 5
+            },
+            {
+                "stat": "atk",
+                "value": 8
+            }
+        ]
+    },
+    {
+        "icon": "rune2.png",
+        "name": "Rune of Defense",
+        "affix": [
+            {
+                "stat": "def",
+                "value": 10
+            },
+            {
+                "stat": "str",
+                "value": 3
+            }
+        ]
+    },
+    {
+        "icon": "rune3.png",
+        "name": "Rune of Health",
+        "affix": [
+            {
+                "stat": "hp",
+                "value": 7
+            },
+            {
+                "stat": "def",
+                "value": 6
+            }
+        ]
+    }
+]
