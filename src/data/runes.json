@@ -1,44 +1,394 @@
-[
-    {
-        "icon": "rune1.png",
-        "name": "Rune of Strength",
-        "affix": [
+{
+    "runeSets": [
+        {
+            "name": "Energy",
+            "fullSetBonus": "hp",
+            "value": 15
+        },
+        {
+            "name": "Guard",
+            "fullSetBonus": "def",
+            "value": 15
+        },
+        {
+            "name": "Fatal",
+            "fullSetBonus": "atk",
+            "value": 15
+        },
+        {
+            "name": "Rage",
+            "fullSetBonus": "cd",
+            "value": 25
+        },
+        {
+            "name": "Vampire",
+            "fullSetBonus": "15% Life Steal"
+        },
+        {
+            "name": "Violent",
+            "fullSetBonus": "Card Return Rate +30%"
+        },
+        {
+            "name": "Destroy",
+            "fullSetBonus": "Destroys Enemy's Max hp (50% of DMG)"
+        },
+        {
+            "name": "Endure",
+            "fullSetBonus": "res",
+            "value": 30
+        },
+        {
+            "name": "Focus",
+            "fullSetBonus": "acc",
+            "value": 30
+        },
+        {
+            "name": "Swift",
+            "fullSetBonus": "Mana Cost -1 (1 time)"
+        },
+        {
+            "name": "Will",
+            "fullSetBonus": "Immunity (90S Cooldown)"
+        }
+    ],
+    "runeSubsets": [
+        {
+            "name": "Fight",
+            "fullSetBonus": "Atk of all allies in line +4%"
+        },
+        {
+            "name": "Determination",
+            "fullSetBonus": "Def of all allies in line +4%"
+        },
+        {
+            "name": "Enhance",
+            "fullSetBonus": "HP of all allies in line +4%"
+        },
+        {
+            "name": "Will",
+            "fullSetBonus": "Immunity (90s Cooldown)"
+        },
+        {
+            "name": "Penetration",
+            "fullSetBonus": "pen",
+            "value": 10
+        },
+        {
+            "name": "Swift",
+            "fullSetBonus": "Mana cost -1 (1 time)"
+        },
+        {
+            "name": "Endure",
+            "fullSetBonus": "res",
+            "value": 30
+        },
+        {
+            "name": "Focus",
+            "fullSetBonus": "acc",
+            "value": 30
+        },
+        {
+            "name": "Blessing",
+            "fullSetBonus": "cdd",
+            "value": 25
+        }
+    ],
+    "additionalStats": {
+        "normal": [
             {
-                "stat": "hp",
-                "value": 5
+                "name": "Crit Damage Reduction",
+                "stats": "cdd",
+                "value": 7,
+                "operator": "%"
             },
             {
-                "stat": "atk",
-                "value": 8
+                "name": "Crit Damage",
+                "stats": "cd",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "Crit Rate",
+                "stats": "cr",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "Accuracy",
+                "stats": "acc",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "Resistance",
+                "stats": "res",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "HP%",
+                "stats": "hp",
+                "value": 5,
+                "operator": "%"
+            },
+            {
+                "name": "DEF%",
+                "stats": "def",
+                "value": 5,
+                "operator": "%"
+            },
+            {
+                "name": "ATK%",
+                "stats": "atk",
+                "value": 5,
+                "operator": "%"
+            },
+            {
+                "name": "Defense Penetration",
+                "stats": "pen",
+                "value": 3,
+                "operator": "%"
+            },
+            {
+                "name": "DEF",
+                "stats": "def",
+                "value": 10,
+                "operator": "+"
+            },
+            {
+                "name": "ATK",
+                "stats": "atk",
+                "value": 10,
+                "operator": "+"
+            },
+            {
+                "name": "HP",
+                "stats": "hp",
+                "value": 150,
+                "operator": "+"
             }
-        ]
-    },
-    {
-        "icon": "rune2.png",
-        "name": "Rune of Defense",
-        "affix": [
+        ],
+        "rare": [
             {
-                "stat": "def",
-                "value": 10
+                "name": "Crit Damage Reduction",
+                "stats": "cdd",
+                "value": 8,
+                "operator": "%"
             },
             {
-                "stat": "str",
-                "value": 3
+                "name": "Crit Damage",
+                "stats": "cd",
+                "value": 8,
+                "operator": "%"
+            },
+            {
+                "name": "Crit Rate",
+                "stats": "cr",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "Accuracy",
+                "stats": "acc",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "Resistance",
+                "stats": "res",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "HP%",
+                "stats": "hp",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "DEF%",
+                "stats": "def",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "ATK%",
+                "stats": "atk",
+                "value": 6,
+                "operator": "%"
+            },
+            {
+                "name": "Defense Penetration",
+                "stats": "pen",
+                "value": 3.5,
+                "operator": "%"
+            },
+            {
+                "name": "DEF",
+                "stats": "def",
+                "value": 12,
+                "operator": "+"
+            },
+            {
+                "name": "ATK",
+                "stats": "atk",
+                "value": 12,
+                "operator": "+"
+            },
+            {
+                "name": "HP",
+                "stats": "hp",
+                "value": 180,
+                "operator": "+"
             }
-        ]
-    },
-    {
-        "icon": "rune3.png",
-        "name": "Rune of Health",
-        "affix": [
+        ],
+        "epic": [
             {
-                "stat": "hp",
-                "value": 7
+                "name": "Crit Damage Reduction",
+                "stats": "cdd",
+                "value": 9,
+                "operator": "%"
             },
             {
-                "stat": "def",
-                "value": 6
+                "name": "Crit Damage",
+                "stats": "cd",
+                "value": 9,
+                "operator": "%"
+            },
+            {
+                "name": "Crit Rate",
+                "stats": "cr",
+                "value": 8,
+                "operator": "%"
+            },
+            {
+                "name": "Accuracy",
+                "stats": "acc",
+                "value": 8,
+                "operator": "%"
+            },
+            {
+                "name": "Resistance",
+                "stats": "res",
+                "value": 8,
+                "operator": "%"
+            },
+            {
+                "name": "HP%",
+                "stats": "hp",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "DEF%",
+                "stats": "def",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "ATK%",
+                "stats": "atk",
+                "value": 7,
+                "operator": "%"
+            },
+            {
+                "name": "Defense Penetration",
+                "stats": "pen",
+                "value": 4,
+                "operator": "%"
+            },
+            {
+                "name": "DEF",
+                "stats": "def",
+                "value": 14,
+                "operator": "+"
+            },
+            {
+                "name": "ATK",
+                "stats": "atk",
+                "value": 14,
+                "operator": "+"
+            },
+            {
+                "name": "HP",
+                "stats": "hp",
+                "value": 210,
+                "operator": "+"
+            }
+        ],
+        "legendary": [
+            {
+                "name": "Crit Damage Reduction",
+                "stats": "cdd",
+                "value": 11,
+                "operator": "%"
+            },
+            {
+                "name": "Crit Damage",
+                "stats": "cd",
+                "value": 11,
+                "operator": "%"
+            },
+            {
+                "name": "Crit Rate",
+                "stats": "cr",
+                "value": 10,
+                "operator": "%"
+            },
+            {
+                "name": "Accuracy",
+                "stats": "acc",
+                "value": 10,
+                "operator": "%"
+            },
+            {
+                "name": "Resistance",
+                "stats": "res",
+                "value": 10,
+                "operator": "%"
+            },
+            {
+                "name": "HP%",
+                "stats": "hp",
+                "value": 9,
+                "operator": "%"
+            },
+            {
+                "name": "DEF%",
+                "stats": "def",
+                "value": 9,
+                "operator": "%"
+            },
+            {
+                "name": "ATK%",
+                "stats": "atk",
+                "value": 9,
+                "operator": "%"
+            },
+            {
+                "name": "Defense Penetration",
+                "stats": "pen",
+                "value": 5,
+                "operator": "%"
+            },
+            {
+                "name": "DEF",
+                "stats": "def",
+                "value": 18,
+                "operator": "+"
+            },
+            {
+                "name": "ATK",
+                "stats": "atk",
+                "value": 18,
+                "operator": "+"
+            },
+            {
+                "name": "HP",
+                "stats": "hp",
+                "value": 270,
+                "operator": "+"
             }
         ]
     }
-]
+}
