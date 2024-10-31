@@ -1,21 +1,34 @@
-import React from "react";
+import React, { useState } from "react";
 import runes from "../data/runes.json";
 
 const RunesComponent = ({ rune, onSelectChange, visible }) => {
-  //change color of the select text based on the rune type
-  const [runeRarity, setRuneRarity] = React.useState([
-    { select1: "normal", select2: "", select3: "", select4: "" },
-  ]);
+  const [runeRarity, setRuneRarity] = useState({
+    select1: "",
+    select2: "",
+    select3: "",
+    select4: "",
+  });
+
+  const [selectedStats, setSelectedStats] = useState({
+    select1: "",
+    select2: "",
+    select3: "",
+    select4: "",
+  });
 
   if (!visible) return null;
 
   const handleSelectChange = (key, value) => {
-    //split the value to get the rune type
-    const runeRarity = value.split(",")[0];
+    const [runeRarity, stat] = value.split(",");
 
     setRuneRarity((prevState) => ({
       ...prevState,
       [key]: runeRarity || "",
+    }));
+
+    setSelectedStats((prevState) => ({
+      ...prevState,
+      [key]: stat || "",
     }));
 
     onSelectChange(key, value);
@@ -30,21 +43,23 @@ const RunesComponent = ({ rune, onSelectChange, visible }) => {
           onChange={(e) => handleSelectChange(key, e.target.value)}
           className={`w-full p-2 rounded-md mb-2 font-bold text-black ${runeRarity[key]}`}
         >
-          <option value="" key=" ">
-            Select a rune stat
-          </option>
+          <option value="">Select a rune stat</option>
           {Object.keys(runes.additionalStats).map((runeType) =>
-            runes.additionalStats[runeType].map((runeStat) => (
-              <option
-                key={runeType + "," + runeStat.stats + "," + runeStat.operator}
-                value={
-                  runeType + "," + runeStat.stats + "," + runeStat.operator
-                }
-                className={`font-bold text-gray-500 ${runeType}`}
-              >
-                {runeStat.name}
-              </option>
-            ))
+            runes.additionalStats[runeType]
+              .filter(
+                (runeStat) =>
+                  !Object.values(selectedStats).includes(runeStat.stats) ||
+                  selectedStats[key] === runeStat.stats
+              )
+              .map((runeStat) => (
+                <option
+                  key={`${runeType},${runeStat.stats},${runeStat.value},${runeStat.operator}`}
+                  value={`${runeType},${runeStat.stats},${runeStat.value},${runeStat.operator}`}
+                  className={`font-bold text-gray-500 ${runeType}`}
+                >
+                  {runeStat.name}
+                </option>
+              ))
           )}
         </select>
       ))}
