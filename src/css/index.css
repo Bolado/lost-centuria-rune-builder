@@ -16,3 +16,19 @@ body {
 .cinzel {
     font-family: 'Cinzel', serif;
 }
+
+.normal {
+    color: gray;
+}
+
+.rare {
+    color: green;
+}
+
+.epic {
+    color: #844ae2;
+}
+
+.legendary {
+    color: orange;
+}
