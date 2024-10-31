@@ -3,6 +3,7 @@ import monsters from "../../data/monsters.json";
 import runes from "../../data/runes.json";
 import ButtonPrimary from "../../components/button-primary";
 import RunesComponent from "../../components/rune-select";
+import RunesStar from "../../components/runes-star";
 
 function NewBuild() {
   const [selectedMonster, setSelectedMonster] = React.useState(null);
@@ -12,6 +13,8 @@ function NewBuild() {
   const [currentRune, setCurrentRune] = React.useState(1);
   const [statSums, setStatSums] = React.useState({});
   const [bonuses, setBonuses] = React.useState({});
+  const [setBonus, setSetBonus] = React.useState({ set: {}, subset: {} });
+
   const handleChange = (index, selectStatNumber, value) => {
     const updatedRunes = [...runesState];
     updatedRunes[index] = { ...updatedRunes[index], [selectStatNumber]: value };
@@ -20,71 +23,70 @@ function NewBuild() {
 
   React.useEffect(() => {
     const sums = runesState.reduce((acc, rune) => {
-      ["select1", "select2", "select3", "select4"].forEach((key) => {
-        if (rune[key]) {
+      ["select1", "select2", "select3", "select4"]
+        .filter((key) => rune[key])
+        .forEach((key) => {
           const [, stat, value, operator] = rune[key].split(",");
           const numericValue = parseFloat(value);
-          const statKey = stat + operator;
+
           if (stat && !isNaN(numericValue)) {
-            if (!acc[statKey]) {
-              acc[statKey] = 0;
-            }
-            acc[statKey] += numericValue;
+            const statKey = stat + operator;
+            acc[statKey] = (acc[statKey] || 0) + numericValue;
           }
-        }
-      });
+        });
+
       return acc;
     }, {});
     setStatSums(sums);
   }, [runesState]);
 
   React.useEffect(() => {
-    if (selectedMonster) {
-      const bonuses = {
-        hp: 0,
-        atk: 0,
-        def: 0,
-        acc: 0,
-        cdd: 0,
-        cr: 0,
-        cd: 0,
-        res: 0,
-        pen: 0,
-      };
-      Object.keys(statSums).forEach((key) => {
-        const stat = key.slice(0, -1);
-        const operator = key.slice(-1);
+    if (!selectedMonster) return;
 
-        if (operator === "+") {
-          bonuses[stat] =
-            bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
-          bonuses[stat] = Math.round(bonuses[stat]);
-          bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
-        }
-        if (operator === "%") {
-          if (stat === "hp" || stat === "atk" || stat === "def") {
-            bonuses[stat] =
-              bonuses[stat] +
-              selectedMonster.baseStats[stat] * (statSums[key] / 100);
-            bonuses[stat] = Math.round(bonuses[stat]);
-          } else {
-            bonuses[stat] =
-              bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
-            bonuses[stat] = Math.round(bonuses[stat]);
-            bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
-          }
-        }
-      });
+    const bonuses = {
+      hp: 0,
+      atk: 0,
+      def: 0,
+      acc: 0,
+      cdd: 0,
+      cr: 0,
+      cd: 0,
+      res: 0,
+      pen: 0,
+    };
 
-      setBonuses(bonuses);
-    }
-  }, [selectedMonster, statSums]);
+    // Calculate main stats
+    Object.keys(statSums).forEach((key) =>
+      calculateBonusStats(key, selectedMonster, statSums, bonuses)
+    );
+
+    // Calculate set bonuses
+    [setBonus.set, setBonus.subset].forEach((bonus) => {
+      if (bonus?.value) {
+        calculateSetBonusStats(selectedMonster, bonus, bonuses);
+      }
+    });
+
+    setBonuses(bonuses);
+  }, [selectedMonster, statSums, setBonus]);
+
+  const handleSetSelectChange = (key, value) => {
+    const isMainSet = key === "set";
+    const rune = runes[isMainSet ? "runeSets" : "runeSubsets"].find(
+      (runeItem) => runeItem.name === value
+    );
+
+    setSetBonus((prevState) => ({
+      ...prevState,
+      [isMainSet ? "set" : "subset"]: rune?.value ? rune : {},
+    }));
+  };
 
   return (
     <div>
       <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
       <div className="flex flex-row w-full wrap mb-4">
-        <div className="basis-1/2 bg-slate-500/10 m-4 p-4 rounded-md">
+        <div className="basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md">
           {selectedMonster ? (
             <div className="flex flex-col">
               <img
@@ -97,28 +99,39 @@ function NewBuild() {
               </p>
               {["hp", "atk", "def", "acc", "cdd", "cr", "cd", "res", "pen"].map(
                 (stat) => (
-                  <div className="flex flex-row justify-between w-[30%]">
-                    <p>
-                      {stat.toUpperCase()}: {selectedMonster.baseStats[stat]}
+                  <div className="flex flex-row justify-between gap-2">
+                    <p className="text-lg font-bold  basis-2/4">
+                      {stat.toUpperCase()}:
                     </p>
-                    {bonuses[stat] !== 0 && (
-                      <p className="text-green-400">+{bonuses[stat]}</p>
-                    )}
+                    <p className="basis-1/4 text-end">
+                      {selectedMonster.baseStats[stat]}
+                    </p>
+                    <div className="basis-1/4">
+                      {bonuses[stat] !== 0 && (
+                        <p className="text-green-400">+{bonuses[stat]}</p>
+                      )}
+                    </div>
                   </div>
                 )
               )}
             </div>
           ) : (
-            <div>Select a monster</div>
+            <div className="text-center font-bold text-4xl content-center h-full">
+              Select a monster
+            </div>
           )}
         </div>
-        <div className="basis-1/2 bg-slate-500/10 m-4 p-4 rounded-md">
+        <div className="basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md">
           <div className="flex flex-row gap-2 mb-4">
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Set:</p>
-              <select className="w-full p-2 rounded-md text-black font-bold">
+              <select
+                className="w-full p-2 rounded-md text-black font-bold"
+                onChange={(e) => handleSetSelectChange("set", e.target.value)}
+              >
+                <option value="">Select a rune set</option>
                 {runes.runeSets.map((runeSet) => (
-                  <option key={runeSet.id} value={runeSet.id}>
+                  <option key={runeSet.name} value={runeSet.name}>
                     {runeSet.name}
                   </option>
                 ))}
@@ -126,9 +139,15 @@ function NewBuild() {
             </div>
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Subset:</p>
-              <select className="w-full p-2 rounded-md text-black  font-bold">
+              <select
+                className="w-full p-2 rounded-md text-black  font-bold"
+                onChange={(e) =>
+                  handleSetSelectChange("subset", e.target.value)
+                }
+              >
+                <option value="">Select a rune subset</option>
                 {runes.runeSubsets.map((runeSet) => (
-                  <option key={runeSet.id} value={runeSet.id}>
+                  <option key={runeSet.name} value={runeSet.name}>
                     {runeSet.name}
                   </option>
                 ))}
@@ -138,14 +157,10 @@ function NewBuild() {
 
           <div className="flex flex-row gap-2">
             <div className="basis-1/2 flex flex-wrap gap-2">
-              {[1, 2, 3, 4, 5, 6].map((runeNumber) => (
-                <ButtonPrimary
-                  key={runeNumber}
-                  onClick={() => setCurrentRune(runeNumber)}
-                >
-                  Rune {runeNumber}
-                </ButtonPrimary>
-              ))}
+              <RunesStar
+                setCurrentRune={setCurrentRune}
+                currentRune={currentRune}
+              ></RunesStar>
             </div>
 
             <div className="basis-1/2 flex flex-wrap gap-2">
@@ -188,3 +203,46 @@ function NewBuild() {
 }
 
 export default NewBuild;
+
+function calculateBonusStats(key, selectedMonster, statSums, bonuses) {
+  const stat = key.slice(0, -1);
+  const operator = key.slice(-1);
+
+  if (operator === "+") {
+    bonuses[stat] =
+      bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
+    bonuses[stat] = Math.round(bonuses[stat]);
+    bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+  }
+  if (operator === "%") {
+    if (stat === "hp" || stat === "atk" || stat === "def") {
+      bonuses[stat] =
+        bonuses[stat] + selectedMonster.baseStats[stat] * (statSums[key] / 100);
+      bonuses[stat] = Math.round(bonuses[stat]);
+    } else {
+      bonuses[stat] =
+        bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
+      bonuses[stat] = Math.round(bonuses[stat]);
+      bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+    }
+  }
+
+  return bonuses;
+}
+
+function calculateSetBonusStats(selectedMonster, setBonus, bonuses) {
+  const { fullSetBonus: stat, operator, value } = setBonus;
+  const baseValue = selectedMonster.baseStats[stat];
+
+  const isPercentageStat =
+    operator === "%" && ["hp", "atk", "def"].includes(stat);
+
+  bonuses[stat] = Math.round(
+    bonuses[stat] +
+      (isPercentageStat
+        ? baseValue * (value / 100)
+        : baseValue + value - baseValue)
+  );
+
+  return bonuses;
+}

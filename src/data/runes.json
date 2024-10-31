@@ -3,22 +3,26 @@
         {
             "name": "Energy",
             "fullSetBonus": "hp",
-            "value": 15
+            "value": 15,
+            "operator": "%"
         },
         {
             "name": "Guard",
             "fullSetBonus": "def",
-            "value": 15
+            "value": 15,
+            "operator": "%"
         },
         {
             "name": "Fatal",
             "fullSetBonus": "atk",
-            "value": 15
+            "value": 15,
+            "operator": "%"
         },
         {
             "name": "Rage",
             "fullSetBonus": "cd",
-            "value": 25
+            "value": 25,
+            "operator": "%"
         },
         {
             "name": "Vampire",
@@ -35,12 +39,14 @@
         {
             "name": "Endure",
             "fullSetBonus": "res",
-            "value": 30
+            "value": 30,
+            "operator": "%"
         },
         {
             "name": "Focus",
             "fullSetBonus": "acc",
-            "value": 30
+            "value": 30,
+            "operator": "%"
         },
         {
             "name": "Swift",
@@ -71,7 +77,8 @@
         {
             "name": "Penetration",
             "fullSetBonus": "pen",
-            "value": 10
+            "value": 10,
+            "operator": "%"
         },
         {
             "name": "Swift",
@@ -80,17 +87,20 @@
         {
             "name": "Endure",
             "fullSetBonus": "res",
-            "value": 30
+            "value": 30,
+            "operator": "%"
         },
         {
             "name": "Focus",
             "fullSetBonus": "acc",
-            "value": 30
+            "value": 30,
+            "operator": "%"
         },
         {
             "name": "Blessing",
             "fullSetBonus": "cdd",
-            "value": 25
+            "value": 25,
+            "operator": "%"
         }
     ],
     "additionalStats": {
