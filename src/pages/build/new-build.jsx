@@ -122,8 +122,8 @@ function NewBuild() {
   return (
     <div>
       <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
-      <div className="flex flex-row w-full wrap mb-4">
-        <div className="basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md">
+      <div className="flex flex-col lg:flex-row w-full mb-4">
+        <div className="lg:basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md">
           {selectedMonster ? (
             <div className="flex flex-col">
               <img
@@ -153,7 +153,7 @@ function NewBuild() {
               )}
             </div>
           ) : (
-            <div className="text-center font-bold text-4xl content-center h-full">
+            <div className="w-full text-center font-bold text-4xl content-center h-full">
               Select a monster
             </div>
           )}
@@ -178,15 +178,15 @@ function NewBuild() {
             )}
           </div>
         </div>
-        <div className="basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md">
-          <div className="flex flex-row gap-2 mb-4">
+        <div className="lg:basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md flex flex-wrap">
+          <div className="flex flex-row gap-2 mb-4 w-full">
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Set:</p>
               <select
                 className="w-full p-2 rounded-md text-black font-bold"
                 onChange={(e) => handleSetSelectChange("set", e.target.value)}
               >
-                <option value="">Select a rune set</option>
+                <option value=""></option>
                 {runes.runeSets.map((runeSet) => (
                   <option key={runeSet.name} value={runeSet.name}>
                     {runeSet.name}
@@ -202,7 +202,7 @@ function NewBuild() {
                   handleSetSelectChange("subset", e.target.value)
                 }
               >
-                <option value="">Select a rune subset</option>
+                <option value=""></option>
                 {runes.runeSubsets.map((runeSet) => (
                   <option key={runeSet.name} value={runeSet.name}>
                     {runeSet.name}
@@ -212,25 +212,22 @@ function NewBuild() {
             </div>
           </div>
 
-          <div className="flex flex-row gap-2">
-            <div className="basis-1/2 flex flex-wrap gap-2">
-              <RunesStar
-                setCurrentRune={setCurrentRune}
-                currentRune={currentRune}
-                runeSetSubset={runeSetSubset}
-              ></RunesStar>
-            </div>
-
-            <div className="basis-1/2 flex flex-wrap gap-2">
-              {runesState.map((rune, i) => (
-                <RunesComponent
-                  key={i}
-                  rune={rune}
-                  onSelectChange={(key, value) => handleChange(i, key, value)}
-                  visible={i === currentRune - 1}
-                />
-              ))}
-            </div>
+          <div className="lg:basis-1/2 flex flex-wrap w-full justify-center">
+            <RunesStar
+              setCurrentRune={setCurrentRune}
+              currentRune={currentRune}
+              runeSetSubset={runeSetSubset}
+            ></RunesStar>
+          </div>
+          <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center">
+            {runesState.map((rune, i) => (
+              <RunesComponent
+                key={i}
+                rune={rune}
+                onSelectChange={(key, value) => handleChange(i, key, value)}
+                visible={i === currentRune - 1}
+              />
+            ))}
           </div>
         </div>
       </div>
