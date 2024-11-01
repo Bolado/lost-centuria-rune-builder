@@ -1,1410 +1,1490 @@
 [
-    {
-        "id": 1,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mei Hou Wang",
-        "baseStats": {
-            "hp": 7017,
-            "atk": 514,
-            "def": 382,
-            "acc": 70,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 2,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Zaiross",
-        "baseStats": {
-            "hp": 8152,
-            "atk": 501,
-            "def": 323,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 3,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Bael",
-        "baseStats": {
-            "hp": 7222,
-            "atk": 487,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 4,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Tessarion",
-        "baseStats": {
-            "hp": 7222,
-            "atk": 487,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 5,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Perna",
-        "baseStats": {
-            "hp": 6721,
-            "atk": 615,
-            "def": 300,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 6,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ariel",
-        "baseStats": {
-            "hp": 341,
-            "atk": 478,
-            "def": 8165,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 7,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mo Long",
-        "baseStats": {
-            "hp": 8298,
-            "atk": 337,
-            "def": 469,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 8,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Poseidon",
-        "baseStats": {
-            "hp": 8466,
-            "atk": 378,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 9,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Camilla",
-        "baseStats": {
-            "hp": 6698,
-            "atk": 446,
-            "def": 469,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 10,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Beth",
-        "baseStats": {
-            "hp": 6174,
-            "atk": 624,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 11,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Woosa",
-        "baseStats": {
-            "hp": 7532,
-            "atk": 432,
-            "def": 428,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 12,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Alicia",
-        "baseStats": {
-            "hp": 5832,
-            "atk": 565,
-            "def": 414,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 13,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ritesh",
-        "baseStats": {
-            "hp": 8548,
-            "atk": 401,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 14,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Hathor",
-        "baseStats": {
-            "hp": 8001,
-            "atk": 373,
-            "def": 455,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 15,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Taranys",
-        "baseStats": {
-            "hp": 7678,
-            "atk": 401,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 16,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Leo",
-        "baseStats": {
-            "hp": 7359,
-            "atk": 455,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 17,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ganymede",
-        "baseStats": {
-            "hp": 7587,
-            "atk": 423,
-            "def": 432,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 18,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Sol",
-        "baseStats": {
-            "hp": 6548,
-            "atk": 533,
-            "def": 401,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 19,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Artamiel",
-        "baseStats": {
-            "hp": 7222,
-            "atk": 396,
-            "def": 483,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 20,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Eleanor",
-        "baseStats": {
-            "hp": 7600,
-            "atk": 410,
-            "def": 410,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 21,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Zerath",
-        "baseStats": {
-            "hp": 8288,
-            "atk": 432,
-            "def": 387,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 22,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Luna",
-        "baseStats": {
-            "hp": 7651,
-            "atk": 432,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 23,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ragdoll",
-        "baseStats": {
-            "hp": 6858,
-            "atk": 528,
-            "def": 378,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 24,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Nicki",
-        "baseStats": {
-            "hp": 6384,
-            "atk": 565,
-            "def": 373,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 25,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Maximilliam",
-        "baseStats": {
-            "hp": 6493,
-            "atk": 596,
-            "def": 328,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 26,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Khmun",
-        "baseStats": {
-            "hp": 7313,
-            "atk": 437,
-            "def": 437,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 27,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Sin",
-        "baseStats": {
-            "hp": 7204,
-            "atk": 483,
-            "def": 401,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 28,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Jean",
-        "baseStats": {
-            "hp": 6402,
-            "atk": 592,
-            "def": 341,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 29,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Scarab",
-        "baseStats": {
-            "hp": 7883,
-            "atk": 341,
-            "def": 496,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 30,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Verdehile",
-        "baseStats": {
-            "hp": 7496,
-            "atk": 483,
-            "def": 378,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 31,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Andes",
-        "baseStats": {
-            "hp": 6174,
-            "atk": 560,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 32,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Hwa",
-        "baseStats": {
-            "hp": 6488,
-            "atk": 542,
-            "def": 387,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 33,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Chloe",
-        "baseStats": {
-            "hp": 7359,
-            "atk": 428,
-            "def": 442,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 34,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mushu",
-        "baseStats": {
-            "hp": 7609,
-            "atk": 510,
-            "def": 346,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 35,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mina",
-        "baseStats": {
-            "hp": 7040,
-            "atk": 514,
-            "def": 373,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 36,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Soha",
-        "baseStats": {
-            "hp": 6721,
-            "atk": 464,
-            "def": 446,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 37,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Galleon",
-        "baseStats": {
-            "hp": 8247,
-            "atk": 419,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 38,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Lapis",
-        "baseStats": {
-            "hp": 6698,
-            "atk": 519,
-            "def": 396,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 39,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ardella",
-        "baseStats": {
-            "hp": 6985,
-            "atk": 519,
-            "def": 373,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 40,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Chasun",
-        "baseStats": {
-            "hp": 7496,
-            "atk": 469,
-            "def": 396,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 41,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Copper",
-        "baseStats": {
-            "hp": 7113,
-            "atk": 355,
-            "def": 533,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 42,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Sophia",
-        "baseStats": {
-            "hp": 7728,
-            "atk": 501,
-            "def": 346,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 43,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Lushen",
-        "baseStats": {
-            "hp": 6242,
-            "atk": 633,
-            "def": 309,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 44,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Tablo",
-        "baseStats": {
-            "hp": 6949,
-            "atk": 487,
-            "def": 414,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 45,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Jeanne",
-        "baseStats": {
-            "hp": 7591,
-            "atk": 405,
-            "def": 451,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 46,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Magnum",
-        "baseStats": {
-            "hp": 7063,
-            "atk": 574,
-            "def": 318,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 47,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Renée",
-        "baseStats": {
-            "hp": 7755,
-            "atk": 346,
-            "def": 501,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 48,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Dias",
-        "baseStats": {
-            "hp": 8407,
-            "atk": 309,
-            "def": 492,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 49,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Isael",
-        "baseStats": {
-            "hp": 6457,
-            "atk": 606,
-            "def": 387,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 50,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Fei",
-        "baseStats": {
-            "hp": 7240,
-            "atk": 478,
-            "def": 401,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 51,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Grego",
-        "baseStats": {
-            "hp": 8193,
-            "atk": 355,
-            "def": 464,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 52,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Sige",
-        "baseStats": {
-            "hp": 6903,
-            "atk": 524,
-            "def": 378,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 53,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Kahli",
-        "baseStats": {
-            "hp": 6156,
-            "atk": 537,
-            "def": 410,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 54,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Baretta",
-        "baseStats": {
-            "hp": 7609,
-            "atk": 478,
-            "def": 373,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 55,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Orion",
-        "baseStats": {
-            "hp": 6926,
-            "atk": 451,
-            "def": 446,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 56,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Fele",
-        "baseStats": {
-            "hp": 8097,
-            "atk": 318,
-            "def": 505,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 57,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Kernodon",
-        "baseStats": {
-            "hp": 7555,
-            "atk": 364,
-            "def": 492,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 58,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Megan",
-        "baseStats": {
-            "hp": 7272,
-            "atk": 451,
-            "def": 423,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 59,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mikene",
-        "baseStats": {
-            "hp": 6903,
-            "atk": 473,
-            "def": 423,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 60,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Chichi",
-        "baseStats": {
-            "hp": 7359,
-            "atk": 455,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 61,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Orochi",
-        "baseStats": {
-            "hp": 8384,
-            "atk": 382,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 62,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Hraesvelg",
-        "baseStats": {
-            "hp": 8156,
-            "atk": 355,
-            "def": 460,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 63,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Hwadam",
-        "baseStats": {
-            "hp": 7837,
-            "atk": 483,
-            "def": 355,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 64,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Thrain",
-        "baseStats": {
-            "hp": 7527,
-            "atk": 633,
-            "def": 223,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 65,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Racuni",
-        "baseStats": {
-            "hp": 7154,
-            "atk": 432,
-            "def": 451,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 66,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Zibrolta",
-        "baseStats": {
-            "hp": 6493,
-            "atk": 569,
-            "def": 355,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 67,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Konamiya",
-        "baseStats": {
-            "hp": 7181,
-            "atk": 451,
-            "def": 428,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 68,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Bernard",
-        "baseStats": {
-            "hp": 7623,
-            "atk": 410,
-            "def": 442,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 69,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Shannon",
-        "baseStats": {
-            "hp": 6766,
-            "atk": 451,
-            "def": 460,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 70,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Rakan",
-        "baseStats": {
-            "hp": 8571,
-            "atk": 391,
-            "def": 401,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 71,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Estelle",
-        "baseStats": {
-            "hp": 7901,
-            "atk": 460,
-            "def": 378,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 72,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Seara",
-        "baseStats": {
-            "hp": 6794,
-            "atk": 524,
-            "def": 387,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 73,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Kuhn",
-        "baseStats": {
-            "hp": 7532,
-            "atk": 318,
-            "def": 537,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 74,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Colleen",
-        "baseStats": {
-            "hp": 7518,
-            "atk": 437,
-            "def": 419,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 75,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Sieq",
-        "baseStats": {
-            "hp": 6698,
-            "atk": 528,
-            "def": 382,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 76,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Elucia",
-        "baseStats": {
-            "hp": 6698,
-            "atk": 483,
-            "def": 428,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 77,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Fynn",
-        "baseStats": {
-            "hp": 6967,
-            "atk": 492,
-            "def": 405,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 78,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Roid",
-        "baseStats": {
-            "hp": 8544,
-            "atk": 382,
-            "def": 405,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 79,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Prilea",
-        "baseStats": {
-            "hp": 6438,
-            "atk": 533,
-            "def": 396,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 80,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Tagaros",
-        "baseStats": {
-            "hp": 6972,
-            "atk": 487,
-            "def": 405,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 81,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Mav",
-        "baseStats": {
-            "hp": 8576,
-            "atk": 332,
-            "def": 455,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 82,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Ramagos",
-        "baseStats": {
-            "hp": 8566,
-            "atk": 328,
-            "def": 460,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 83,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Belladeon",
-        "baseStats": {
-            "hp": 7796,
-            "atk": 410,
-            "def": 428,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 84,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Jeogun",
-        "baseStats": {
-            "hp": 7910,
-            "atk": 387,
-            "def": 451,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 85,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Nyx",
-        "baseStats": {
-            "hp": 7733,
-            "atk": 455,
-            "def": 391,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 86,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Figaro",
-        "baseStats": {
-            "hp": 9999,
-            "atk": 9999,
-            "def": 9999,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 87,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Wolyung",
-        "baseStats": {
-            "hp": 9999,
-            "atk": 9999,
-            "def": 9999,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
-    },
-    {
-        "id": 88,
-        "icon": "https://swrunebuilder.com/images/monsters/Satoru%20Gojo%20Fire.png",
-        "name": "Chandra",
-        "baseStats": {
-            "hp": 9999,
-            "atk": 9999,
-            "def": 9999,
-            "acc": 0,
-            "cdd": 0,
-            "cr": 15,
-            "cd": 150,
-            "res": 15,
-            "pen": 0
-        }
+  {
+    "id": 1,
+    "icon": "https://i.imgur.com/HTe2PK5.png",
+    "name": "Mei Hou Wang",
+    "baseStats": {
+      "hp": 7017,
+      "atk": 514,
+      "def": 382,
+      "acc": 70,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
     }
+  },
+  {
+    "id": 2,
+    "icon": "https://i.imgur.com/ZR56XgT.png",
+    "name": "Zaiross",
+    "baseStats": {
+      "hp": 8152,
+      "atk": 501,
+      "def": 323,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 3,
+    "icon": "https://i.imgur.com/VPYSRge.png",
+    "name": "Bael",
+    "baseStats": {
+      "hp": 7222,
+      "atk": 487,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 4,
+    "icon": "https://i.imgur.com/61uIzgG.png",
+    "name": "Tessarion",
+    "baseStats": {
+      "hp": 7222,
+      "atk": 487,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 5,
+    "icon": "https://i.imgur.com/pEWREzM.png",
+    "name": "Perna",
+    "baseStats": {
+      "hp": 6721,
+      "atk": 615,
+      "def": 300,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 6,
+    "icon": "https://i.imgur.com/m6l5Pk9.png",
+    "name": "Ariel",
+    "baseStats": {
+      "hp": 341,
+      "atk": 478,
+      "def": 8165,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 7,
+    "icon": "https://i.imgur.com/iq7SAB3.png",
+    "name": "Mo Long",
+    "baseStats": {
+      "hp": 8298,
+      "atk": 337,
+      "def": 469,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 8,
+    "icon": "https://i.imgur.com/P61gp6P.png",
+    "name": "Poseidon",
+    "baseStats": {
+      "hp": 8466,
+      "atk": 378,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 9,
+    "icon": "https://i.imgur.com/s4dhNot.png",
+    "name": "Camilla",
+    "baseStats": {
+      "hp": 6698,
+      "atk": 446,
+      "def": 469,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 10,
+    "icon": "https://i.imgur.com/oLwurbK.png",
+    "name": "Beth",
+    "baseStats": {
+      "hp": 6174,
+      "atk": 624,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 11,
+    "icon": "https://i.imgur.com/pgqRUqH.png",
+    "name": "Woosa",
+    "baseStats": {
+      "hp": 7532,
+      "atk": 432,
+      "def": 428,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 12,
+    "icon": "https://i.imgur.com/jWhIa9W.png",
+    "name": "Alicia",
+    "baseStats": {
+      "hp": 5832,
+      "atk": 565,
+      "def": 414,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 13,
+    "icon": "https://i.imgur.com/9i3prYu.png",
+    "name": "Ritesh",
+    "baseStats": {
+      "hp": 8548,
+      "atk": 401,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 14,
+    "icon": "https://i.imgur.com/aXrE7SF.png",
+    "name": "Hathor",
+    "baseStats": {
+      "hp": 8001,
+      "atk": 373,
+      "def": 455,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 15,
+    "icon": "https://i.imgur.com/GUJJ7RY.png",
+    "name": "Taranys",
+    "baseStats": {
+      "hp": 7678,
+      "atk": 401,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 16,
+    "icon": "https://i.imgur.com/rpsmHTU.png",
+    "name": "Leo",
+    "baseStats": {
+      "hp": 7359,
+      "atk": 455,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 17,
+    "icon": "https://i.imgur.com/51z5o6F.png",
+    "name": "Ganymede",
+    "baseStats": {
+      "hp": 7587,
+      "atk": 423,
+      "def": 432,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 18,
+    "icon": "https://i.imgur.com/HAiMr7T.png",
+    "name": "Sol",
+    "baseStats": {
+      "hp": 6548,
+      "atk": 533,
+      "def": 401,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 19,
+    "icon": "https://i.imgur.com/s9Y1LDd.png",
+    "name": "Artamiel",
+    "baseStats": {
+      "hp": 7222,
+      "atk": 396,
+      "def": 483,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 20,
+    "icon": "https://i.imgur.com/KG7WNSR.png",
+    "name": "Eleanor",
+    "baseStats": {
+      "hp": 7600,
+      "atk": 410,
+      "def": 410,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 21,
+    "icon": "https://i.imgur.com/hlSp4Lk.png",
+    "name": "Zerath",
+    "baseStats": {
+      "hp": 8288,
+      "atk": 432,
+      "def": 387,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 22,
+    "icon": "https://i.imgur.com/CGJ0Erp.png",
+    "name": "Luna",
+    "baseStats": {
+      "hp": 7651,
+      "atk": 432,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 23,
+    "icon": "https://i.imgur.com/hNcnBXe.png",
+    "name": "Ragdoll",
+    "baseStats": {
+      "hp": 6858,
+      "atk": 528,
+      "def": 378,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 24,
+    "icon": "https://i.imgur.com/dliXPRl.png",
+    "name": "Nicki",
+    "baseStats": {
+      "hp": 6384,
+      "atk": 565,
+      "def": 373,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 25,
+    "icon": "https://i.imgur.com/vD2yEZD.png",
+    "name": "Maximilian",
+    "baseStats": {
+      "hp": 6493,
+      "atk": 596,
+      "def": 328,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 26,
+    "icon": "https://i.imgur.com/6J3fzG3.png",
+    "name": "Khmun",
+    "baseStats": {
+      "hp": 7313,
+      "atk": 437,
+      "def": 437,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 27,
+    "icon": "https://i.imgur.com/lE2JivX.png",
+    "name": "Sin",
+    "baseStats": {
+      "hp": 7204,
+      "atk": 483,
+      "def": 401,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 28,
+    "icon": "https://i.imgur.com/vLrm5W7.png",
+    "name": "Jean",
+    "baseStats": {
+      "hp": 6402,
+      "atk": 592,
+      "def": 341,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 29,
+    "icon": "https://i.imgur.com/uvipspe.png",
+    "name": "Scarab",
+    "baseStats": {
+      "hp": 7883,
+      "atk": 341,
+      "def": 496,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 30,
+    "icon": "https://i.imgur.com/agxnK5G.png",
+    "name": "Verdehile",
+    "baseStats": {
+      "hp": 7496,
+      "atk": 483,
+      "def": 378,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 31,
+    "icon": "https://i.imgur.com/XIikZnI.png",
+    "name": "Andes",
+    "baseStats": {
+      "hp": 6174,
+      "atk": 560,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 32,
+    "icon": "https://i.imgur.com/IzD859D.png",
+    "name": "Hwa",
+    "baseStats": {
+      "hp": 6488,
+      "atk": 542,
+      "def": 387,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 33,
+    "icon": "https://i.imgur.com/RIMlzUz.png",
+    "name": "Chloe",
+    "baseStats": {
+      "hp": 7359,
+      "atk": 428,
+      "def": 442,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 34,
+    "icon": "https://i.imgur.com/Vrqsr4G.png",
+    "name": "Mushu",
+    "baseStats": {
+      "hp": 7609,
+      "atk": 510,
+      "def": 346,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 35,
+    "icon": "https://i.imgur.com/Xpk6oIV.png",
+    "name": "Mina",
+    "baseStats": {
+      "hp": 7040,
+      "atk": 514,
+      "def": 373,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 36,
+    "icon": "https://i.imgur.com/BVtShIY.png",
+    "name": "Soha",
+    "baseStats": {
+      "hp": 6721,
+      "atk": 464,
+      "def": 446,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 37,
+    "icon": "https://i.imgur.com/9yPFIhl.png",
+    "name": "Galleon",
+    "baseStats": {
+      "hp": 8247,
+      "atk": 419,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 38,
+    "icon": "https://i.imgur.com/kpeOLtV.png",
+    "name": "Lapis",
+    "baseStats": {
+      "hp": 6698,
+      "atk": 519,
+      "def": 396,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 39,
+    "icon": "https://i.imgur.com/WpWNgQK.png",
+    "name": "Ardella",
+    "baseStats": {
+      "hp": 6985,
+      "atk": 519,
+      "def": 373,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 40,
+    "icon": "https://i.imgur.com/bDw2GvJ.png",
+    "name": "Chasun",
+    "baseStats": {
+      "hp": 7496,
+      "atk": 469,
+      "def": 396,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 41,
+    "icon": "https://i.imgur.com/uHVoJzg.png",
+    "name": "Copper",
+    "baseStats": {
+      "hp": 7113,
+      "atk": 355,
+      "def": 533,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 42,
+    "icon": "https://i.imgur.com/gtkfc3o.png",
+    "name": "Sophia",
+    "baseStats": {
+      "hp": 7728,
+      "atk": 501,
+      "def": 346,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 43,
+    "icon": "https://i.imgur.com/hVTYe2C.png",
+    "name": "Lushen",
+    "baseStats": {
+      "hp": 6242,
+      "atk": 633,
+      "def": 309,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 44,
+    "icon": "https://i.imgur.com/9nmpCFZ.png",
+    "name": "Tablo",
+    "baseStats": {
+      "hp": 6949,
+      "atk": 487,
+      "def": 414,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 45,
+    "icon": "https://i.imgur.com/HwG3PXF.png",
+    "name": "Jeanne",
+    "baseStats": {
+      "hp": 7591,
+      "atk": 405,
+      "def": 451,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 46,
+    "icon": "https://i.imgur.com/b6VWv4l.png",
+    "name": "Magnum",
+    "baseStats": {
+      "hp": 7063,
+      "atk": 574,
+      "def": 318,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 47,
+    "icon": "https://i.imgur.com/38i2oUZ.png",
+    "name": "Renée",
+    "baseStats": {
+      "hp": 7755,
+      "atk": 346,
+      "def": 501,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 48,
+    "icon": "https://i.imgur.com/gYQgGFU.png",
+    "name": "Dias",
+    "baseStats": {
+      "hp": 8407,
+      "atk": 309,
+      "def": 492,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 49,
+    "icon": "https://i.imgur.com/e343GAr.png",
+    "name": "Isael",
+    "baseStats": {
+      "hp": 6457,
+      "atk": 606,
+      "def": 387,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 50,
+    "icon": "https://i.imgur.com/rwMz9gl.png",
+    "name": "Fei",
+    "baseStats": {
+      "hp": 7240,
+      "atk": 478,
+      "def": 401,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 51,
+    "icon": "https://i.imgur.com/rOyPixE.png",
+    "name": "Grego",
+    "baseStats": {
+      "hp": 8193,
+      "atk": 355,
+      "def": 464,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 52,
+    "icon": "https://i.imgur.com/kzxlvgc.png",
+    "name": "Sige",
+    "baseStats": {
+      "hp": 6903,
+      "atk": 524,
+      "def": 378,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 53,
+    "icon": "https://i.imgur.com/j1zNY5H.png",
+    "name": "Kahli",
+    "baseStats": {
+      "hp": 6156,
+      "atk": 537,
+      "def": 410,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 54,
+    "icon": "https://i.imgur.com/N1FJxXX.png",
+    "name": "Baretta",
+    "baseStats": {
+      "hp": 7609,
+      "atk": 478,
+      "def": 373,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 55,
+    "icon": "https://i.imgur.com/PrpbRIi.png",
+    "name": "Orion",
+    "baseStats": {
+      "hp": 6926,
+      "atk": 451,
+      "def": 446,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 56,
+    "icon": "https://i.imgur.com/rBpqeXk.png",
+    "name": "Fele",
+    "baseStats": {
+      "hp": 8097,
+      "atk": 318,
+      "def": 505,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 57,
+    "icon": "https://i.imgur.com/IDjuKKr.png",
+    "name": "Kernodon",
+    "baseStats": {
+      "hp": 7555,
+      "atk": 364,
+      "def": 492,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 58,
+    "icon": "https://i.imgur.com/lP85xw8.png",
+    "name": "Megan",
+    "baseStats": {
+      "hp": 7272,
+      "atk": 451,
+      "def": 423,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 59,
+    "icon": "https://i.imgur.com/U9vjUUF.png",
+    "name": "Mikene",
+    "baseStats": {
+      "hp": 6903,
+      "atk": 473,
+      "def": 423,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 60,
+    "icon": "https://i.imgur.com/ZyJ729S.png",
+    "name": "Chi chi",
+    "baseStats": {
+      "hp": 7359,
+      "atk": 455,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 61,
+    "icon": "https://i.imgur.com/wV6D0J3.png",
+    "name": "Orochi",
+    "baseStats": {
+      "hp": 8384,
+      "atk": 382,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 62,
+    "icon": "https://i.imgur.com/5LqAG4i.png",
+    "name": "Hraesvelg",
+    "baseStats": {
+      "hp": 8156,
+      "atk": 355,
+      "def": 460,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 63,
+    "icon": "https://i.imgur.com/hI1FLyw.png",
+    "name": "Hwadam",
+    "baseStats": {
+      "hp": 7837,
+      "atk": 483,
+      "def": 355,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 64,
+    "icon": "https://i.imgur.com/YJZ18PU.png",
+    "name": "Thrain",
+    "baseStats": {
+      "hp": 7527,
+      "atk": 633,
+      "def": 223,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 65,
+    "icon": "https://i.imgur.com/ljV7kVp.png",
+    "name": "Racuni",
+    "baseStats": {
+      "hp": 7154,
+      "atk": 432,
+      "def": 451,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 66,
+    "icon": "https://i.imgur.com/il7pDtV.png",
+    "name": "Zibrolta",
+    "baseStats": {
+      "hp": 6493,
+      "atk": 569,
+      "def": 355,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 67,
+    "icon": "https://i.imgur.com/npbNIjR.png",
+    "name": "Konamiya",
+    "baseStats": {
+      "hp": 7181,
+      "atk": 451,
+      "def": 428,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 68,
+    "icon": "https://i.imgur.com/Nhu89cB.png",
+    "name": "Bernard",
+    "baseStats": {
+      "hp": 7623,
+      "atk": 410,
+      "def": 442,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 69,
+    "icon": "https://i.imgur.com/biDc8MU.png",
+    "name": "Shannon",
+    "baseStats": {
+      "hp": 6766,
+      "atk": 451,
+      "def": 460,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 70,
+    "icon": "https://i.imgur.com/NPKMLMH.png",
+    "name": "Rakan",
+    "baseStats": {
+      "hp": 8571,
+      "atk": 391,
+      "def": 401,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 71,
+    "icon": "https://i.imgur.com/AX9W3wn.png",
+    "name": "Estelle",
+    "baseStats": {
+      "hp": 7901,
+      "atk": 460,
+      "def": 378,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 72,
+    "icon": "https://i.imgur.com/i40nSti.png",
+    "name": "Seara",
+    "baseStats": {
+      "hp": 6794,
+      "atk": 524,
+      "def": 387,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 73,
+    "icon": "https://i.imgur.com/LwkhTMp.png",
+    "name": "Kuhn",
+    "baseStats": {
+      "hp": 7532,
+      "atk": 318,
+      "def": 537,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 74,
+    "icon": "https://i.imgur.com/exkQdda.png",
+    "name": "Colleen",
+    "baseStats": {
+      "hp": 7518,
+      "atk": 437,
+      "def": 419,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 75,
+    "icon": "https://i.imgur.com/JpwVaXE.png",
+    "name": "Sieq",
+    "baseStats": {
+      "hp": 6698,
+      "atk": 528,
+      "def": 382,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 76,
+    "icon": "https://i.imgur.com/LV4QzdL.png",
+    "name": "Elucia",
+    "baseStats": {
+      "hp": 6698,
+      "atk": 483,
+      "def": 428,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 77,
+    "icon": "https://i.imgur.com/GBV5wpy.png",
+    "name": "Fynn",
+    "baseStats": {
+      "hp": 6967,
+      "atk": 492,
+      "def": 405,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 78,
+    "icon": "https://i.imgur.com/UtHch3e.png",
+    "name": "Roid",
+    "baseStats": {
+      "hp": 8544,
+      "atk": 382,
+      "def": 405,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 79,
+    "icon": "https://i.imgur.com/TnCt35R.png",
+    "name": "Prilea",
+    "baseStats": {
+      "hp": 6438,
+      "atk": 533,
+      "def": 396,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 80,
+    "icon": "https://i.imgur.com/ESODNCJ.png",
+    "name": "Tagaros",
+    "baseStats": {
+      "hp": 6972,
+      "atk": 487,
+      "def": 405,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 81,
+    "icon": "https://i.imgur.com/w2uUMKH.png",
+    "name": "Mav",
+    "baseStats": {
+      "hp": 8576,
+      "atk": 332,
+      "def": 455,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 82,
+    "icon": "https://i.imgur.com/hmmJqJC.png",
+    "name": "Ramagos",
+    "baseStats": {
+      "hp": 8566,
+      "atk": 328,
+      "def": 460,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 83,
+    "icon": "https://i.imgur.com/rNHEUGh.png",
+    "name": "Belladeon",
+    "baseStats": {
+      "hp": 7796,
+      "atk": 410,
+      "def": 428,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 84,
+    "icon": "https://i.imgur.com/2IeJd3s.png",
+    "name": "Jeogun",
+    "baseStats": {
+      "hp": 7910,
+      "atk": 387,
+      "def": 451,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 85,
+    "icon": "https://i.imgur.com/ovRhDRN.png",
+    "name": "Nyx",
+    "baseStats": {
+      "hp": 7733,
+      "atk": 455,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 86,
+    "icon": "https://i.imgur.com/2VTwULo.png",
+    "name": "Figaro",
+    "baseStats": {
+      "hp": 6703,
+      "atk": 606,
+      "def": 305,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 87,
+    "icon": "https://i.imgur.com/wHSgn1G.png",
+    "name": "Wolyung",
+    "baseStats": {
+      "hp": 7646,
+      "atk": 478,
+      "def": 355,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 88,
+    "icon": "https://i.imgur.com/yOtYd3d.png",
+    "name": "Chandra",
+    "baseStats": {
+      "hp": 8484,
+      "atk": 405,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 89,
+    "icon": "https://i.imgur.com/c022seh.png",
+    "name": "Elsharion",
+    "baseStats": {
+      "hp": 7222,
+      "atk": 487,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 90,
+    "icon": "https://i.imgur.com/AChikCb.png",
+    "name": "Ethna",
+    "baseStats": {
+      "hp": 6174,
+      "atk": 624,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 91,
+    "icon": "https://i.imgur.com/aKlqVKo.png",
+    "name": "Pontos",
+    "baseStats": {
+      "hp": 9999,
+      "atk": 9999,
+      "def": 9999,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 92,
+    "icon": "https://i.imgur.com/wp6sYVx.png",
+    "name": "Rasheed",
+    "baseStats": {
+      "hp": 9999,
+      "atk": 9999,
+      "def": 9999,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  },
+  {
+    "id": 93,
+    "icon": "https://i.imgur.com/GPrPgCQ.png",
+    "name": "Sigmarus",
+    "baseStats": {
+      "hp": 7222,
+      "atk": 487,
+      "def": 391,
+      "acc": 0,
+      "cdd": 0,
+      "cr": 15,
+      "cd": 150,
+      "res": 15,
+      "pen": 0
+    }
+  }
 ]

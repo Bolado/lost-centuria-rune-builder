@@ -1,7 +1,6 @@
 import React from "react";
 import monsters from "../../data/monsters.json";
 import runes from "../../data/runes.json";
-import ButtonPrimary from "../../components/button-primary";
 import RunesComponent from "../../components/rune-select";
 import RunesStar from "../../components/runes-star";
 
@@ -14,6 +13,11 @@ function NewBuild() {
   const [statSums, setStatSums] = React.useState({});
   const [bonuses, setBonuses] = React.useState({});
   const [setBonus, setSetBonus] = React.useState({ set: {}, subset: {} });
+  const [verbalSetBonus, setVerbalSetBonus] = React.useState({});
+  const [runeSetSubset, setRuneSetSubset] = React.useState({
+    set: {},
+    subset: {},
+  });
 
   const handleChange = (index, selectStatNumber, value) => {
     const updatedRunes = [...runesState];
@@ -54,6 +58,13 @@ function NewBuild() {
       res: 0,
       pen: 0,
     };
+    //ADD IF RUNE SET OR SUBSET IS SELECTED
+    // Runa 1 - 32% atk
+    // Runa 2 - +160 ATK
+    // Runa 3 - 32% HP
+    // Runa 4 - +2400 HP
+    // Runa 5 - 32% def
+    // Runa 6 - +160 def
 
     // Calculate main stats
     Object.keys(statSums).forEach((key) =>
@@ -80,6 +91,16 @@ function NewBuild() {
       ...prevState,
       [isMainSet ? "set" : "subset"]: rune?.value ? rune : {},
     }));
+
+    setVerbalSetBonus((prevState) => ({
+      ...prevState,
+      [isMainSet ? "set" : "subset"]: rune?.value ? {} : rune,
+    }));
+
+    setRuneSetSubset((prevState) => ({
+      ...prevState,
+      [isMainSet ? "set" : "subset"]: rune,
+    }));
   };
 
   return (
@@ -92,7 +113,7 @@ function NewBuild() {
               <img
                 src={selectedMonster.icon}
                 alt={selectedMonster.name}
-                className="w-20 h-20 mx-auto"
+                className="w-20 h-26 mx-auto object-cover"
               />
               <p className="text-xl font-bold text-center">
                 {selectedMonster.name}
@@ -120,6 +141,26 @@ function NewBuild() {
               Select a monster
             </div>
           )}
+          <div className="pt-2">
+            {selectedMonster && verbalSetBonus.set?.fullSetBonus && (
+              <div>
+                <p className="font-bold text-lg">Set Bonus:</p>
+                <p>
+                  {verbalSetBonus.set.name}: {verbalSetBonus.set.fullSetBonus}
+                </p>
+              </div>
+            )}
+
+            {selectedMonster && verbalSetBonus.subset?.fullSetBonus && (
+              <div>
+                <p className="font-bold text-lg">Subset Bonus:</p>
+                <p>
+                  {verbalSetBonus.subset.name}:{" "}
+                  {verbalSetBonus.subset.fullSetBonus}
+                </p>
+              </div>
+            )}
+          </div>
         </div>
         <div className="basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md">
           <div className="flex flex-row gap-2 mb-4">
@@ -160,6 +201,7 @@ function NewBuild() {
               <RunesStar
                 setCurrentRune={setCurrentRune}
                 currentRune={currentRune}
+                runeSetSubset={runeSetSubset}
               ></RunesStar>
             </div>
 
@@ -191,7 +233,7 @@ function NewBuild() {
                 <img
                   src={monster.icon}
                   alt={monster.name}
-                  className="w-16 h-16"
+                  className="w-16 h-22 object-cover	"
                 />
                 <div>{monster.name}</div>
               </div>
