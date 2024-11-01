@@ -58,13 +58,29 @@ function NewBuild() {
       res: 0,
       pen: 0,
     };
-    //ADD IF RUNE SET OR SUBSET IS SELECTED
-    // Runa 1 - 32% atk
-    // Runa 2 - +160 ATK
-    // Runa 3 - 32% HP
-    // Runa 4 - +2400 HP
-    // Runa 5 - 32% def
-    // Runa 6 - +160 def
+
+    if (runeSetSubset.set?.name) {
+      const bonus = {
+        "atk%": 32,
+        "hp%": 32,
+        "def%": 32,
+      };
+
+      Object.keys(bonus).forEach((key) => {
+        calculateBonusStats(key, selectedMonster, bonus, bonuses);
+      });
+    }
+
+    if (runeSetSubset.subset?.name) {
+      const bonus = {
+        "atk+": 160,
+        "hp+": 2400,
+        "def+": 160,
+      };
+      Object.keys(bonus).forEach((key) => {
+        calculateBonusStats(key, selectedMonster, bonus, bonuses);
+      });
+    }
 
     // Calculate main stats
     Object.keys(statSums).forEach((key) =>
@@ -79,7 +95,7 @@ function NewBuild() {
     });
 
     setBonuses(bonuses);
-  }, [selectedMonster, statSums, setBonus]);
+  }, [selectedMonster, statSums, setBonus, runeSetSubset]);
 
   const handleSetSelectChange = (key, value) => {
     const isMainSet = key === "set";
