@@ -225,6 +225,7 @@ function NewBuild() {
                 key={i}
                 rune={rune}
                 onSelectChange={(key, value) => handleChange(i, key, value)}
+                currentRune={currentRune}
                 visible={i === currentRune - 1}
               />
             ))}
