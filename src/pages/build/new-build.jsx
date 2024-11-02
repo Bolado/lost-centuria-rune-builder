@@ -1,7 +1,7 @@
 import React from "react";
 import monsters from "../../data/monsters.json";
 import runes from "../../data/runes.json";
-import RunesComponent from "../../components/rune-select";
+import RuneStatSelector from "../../components/rune-select";
 import RunesStar from "../../components/runes-star";
 
 function NewBuild() {
@@ -219,14 +219,14 @@ function NewBuild() {
               runeSetSubset={runeSetSubset}
             ></RunesStar>
           </div>
-          <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center">
+          <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center w-full">
             {runesState.map((rune, i) => (
-              <RunesComponent
-                key={i}
-                rune={rune}
-                onSelectChange={(key, value) => handleChange(i, key, value)}
+              <RuneStatSelector
+                currentRuneId={i}
+                selectedRune={rune}
+                onStatChange={(key, value) => handleChange(i, key, value)}
                 currentRune={currentRune}
-                visible={i === currentRune - 1}
+                isVisible={i === currentRune - 1}
               />
             ))}
           </div>
