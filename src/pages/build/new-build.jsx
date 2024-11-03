@@ -217,7 +217,7 @@ function NewBuild() {
               setCurrentRune={setCurrentRune}
               currentRune={currentRune}
               runeSetSubset={runeSetSubset}
-            ></RunesStar>
+            />
           </div>
           <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center w-full">
             {runesState.map((rune, i) => (
