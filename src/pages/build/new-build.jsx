@@ -3,188 +3,215 @@ import monsters from "../../data/monsters.json";
 import runes from "../../data/runes.json";
 import RuneStatSelector from "../../components/rune-select";
 import RunesStar from "../../components/runes-star";
+import {
+  deserializeBuildState,
+  serializeBuildState,
+} from "../../utils/serializer";
+import { useSearchParams } from "react-router-dom";
+
+// Initial state structure for a build
+export const initialBuildState = {
+  monster: null,
+  currentRuneSlot: 1,
+  runeSet: {
+    main: null,
+    sub: null,
+  },
+  runes: Array(6)
+    .fill()
+    .map(() => ({
+      stats: Array(4)
+        .fill()
+        .map(() => ({
+          name: "",
+          rarity: "normal",
+          value: null,
+          operator: null,
+        })),
+    })),
+  bonuses: {
+    hp: 0,
+    atk: 0,
+    def: 0,
+    acc: 0,
+    cdd: 0,
+    cr: 0,
+    cd: 0,
+    res: 0,
+    pen: 0,
+  },
+  statSums: {},
+};
 
 function NewBuild() {
-  const [selectedMonster, setSelectedMonster] = React.useState(null);
-  const [runesState, setRunesState] = React.useState(
-    Array(6).fill({ select1: "", select2: "", select3: "", select4: "" })
-  );
-  const [currentRune, setCurrentRune] = React.useState(1);
-  const [statSums, setStatSums] = React.useState({});
-  const [bonuses, setBonuses] = React.useState({});
-  const [setBonus, setSetBonus] = React.useState({ set: {}, subset: {} });
-  const [verbalSetBonus, setVerbalSetBonus] = React.useState({});
-  const [runeSetSubset, setRuneSetSubset] = React.useState({
-    set: {},
-    subset: {},
-  });
+  const [build, setBuild] = React.useState(initialBuildState);
+  const [, setSearchParams] = useSearchParams();
 
-  const handleChange = (index, selectStatNumber, value) => {
-    const updatedRunes = [...runesState];
-    updatedRunes[index] = { ...updatedRunes[index], [selectStatNumber]: value };
-    setRunesState(updatedRunes);
+  // Load build from URL
+  const loadBuildFromUrl = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const buildData = urlParams.get("build");
+
+    if (buildData) {
+      const decodedState = deserializeBuildState(buildData, initialBuildState);
+      console.log("Decoded state:", decodedState);
+      // Update your state with decodedState
+      setBuild(decodedState);
+    }
+  };
+
+  // Share handler
+  const handleShare = () => {
+    const encoded = serializeBuildState(build);
+    setSearchParams({ build: encoded });
+    // Copy to clipboard code...
+  };
+
+  // Update URL with build state
+  React.useEffect(() => {
+    loadBuildFromUrl();
+  }, []);
+
+  const handleMonsterSelect = (selectedMonster) => {
+    setBuild((prev) => ({
+      ...prev,
+      monster: monsters.find((m) => m.id === selectedMonster.id),
+    }));
+  };
+
+  const handleRuneSetChange = (type, value) => {
+    const isMainSet = type === "main";
+    const runeSet = runes[isMainSet ? "runeSets" : "runeSubsets"].find(
+      (set) => set.name === value
+    );
+
+    setBuild((prev) => ({
+      ...prev,
+      runeSet: {
+        ...prev.runeSet,
+        [isMainSet ? "main" : "sub"]: runeSet || null,
+      },
+    }));
+  };
+
+  const handleRuneStatChange = (runeIndex, statIndex, newStat) => {
+    setBuild((prev) => {
+      const updatedRunes = [...prev.runes];
+
+      if (!newStat) {
+        updatedRunes[runeIndex].stats[statIndex] = {
+          name: "",
+          rarity: "normal",
+          value: null,
+          operator: null,
+        };
+      } else {
+        const [rarity, stat, value, operator] = newStat.split(",");
+        updatedRunes[runeIndex].stats[statIndex] = {
+          name: stat,
+          rarity,
+          value: parseFloat(value),
+          operator,
+        };
+      }
+
+      return {
+        ...prev,
+        runes: updatedRunes,
+      };
+    });
   };
 
   React.useEffect(() => {
-    const sums = runesState.reduce((acc, rune) => {
-      ["select1", "select2", "select3", "select4"]
-        .filter((key) => rune[key])
-        .forEach((key) => {
-          const [, stat, value, operator] = rune[key].split(",");
-          const numericValue = parseFloat(value);
+    if (!build.monster) return;
 
-          if (stat && !isNaN(numericValue)) {
-            const statKey = stat + operator;
-            acc[statKey] = (acc[statKey] || 0) + numericValue;
-          }
-        });
-
+    // Calculate stat sums from runes
+    const sums = build.runes.reduce((acc, rune) => {
+      rune.stats.forEach((stat) => {
+        if (stat.name && stat.value) {
+          const statKey = stat.name + stat.operator;
+          acc[statKey] = (acc[statKey] || 0) + stat.value;
+        }
+      });
       return acc;
     }, {});
-    setStatSums(sums);
-  }, [runesState]);
 
-  React.useEffect(() => {
-    if (!selectedMonster) return;
-
-    const bonuses = {
-      hp: 0,
-      atk: 0,
-      def: 0,
-      acc: 0,
-      cdd: 0,
-      cr: 0,
-      cd: 0,
-      res: 0,
-      pen: 0,
-    };
-
-    if (runeSetSubset.set?.name) {
-      const bonus = {
-        "atk%": 32,
-        "hp%": 32,
-        "def%": 32,
-      };
-
-      Object.keys(bonus).forEach((key) => {
-        calculateBonusStats(key, selectedMonster, bonus, bonuses);
-      });
-    }
-
-    if (runeSetSubset.subset?.name) {
-      const bonus = {
-        "atk+": 160,
-        "hp+": 2400,
-        "def+": 160,
-      };
-      Object.keys(bonus).forEach((key) => {
-        calculateBonusStats(key, selectedMonster, bonus, bonuses);
-      });
-    }
-
-    // Calculate main stats
-    Object.keys(statSums).forEach((key) =>
-      calculateBonusStats(key, selectedMonster, statSums, bonuses)
-    );
-
-    // Calculate set bonuses
-    [setBonus.set, setBonus.subset].forEach((bonus) => {
-      if (bonus?.value) {
-        calculateSetBonusStats(selectedMonster, bonus, bonuses);
-      }
+    // Calculate bonuses
+    const newBonuses = calculateAllBonuses({
+      monster: build.monster,
+      statSums: sums,
+      runeSet: build.runeSet,
     });
 
-    setBonuses(bonuses);
-  }, [selectedMonster, statSums, setBonus, runeSetSubset]);
-
-  const handleSetSelectChange = (key, value) => {
-    const isMainSet = key === "set";
-    const rune = runes[isMainSet ? "runeSets" : "runeSubsets"].find(
-      (runeItem) => runeItem.name === value
-    );
-
-    setSetBonus((prevState) => ({
-      ...prevState,
-      [isMainSet ? "set" : "subset"]: rune?.value ? rune : {},
+    setBuild((prev) => ({
+      ...prev,
+      statSums: sums,
+      bonuses: newBonuses,
     }));
 
-    setVerbalSetBonus((prevState) => ({
-      ...prevState,
-      [isMainSet ? "set" : "subset"]: rune?.value ? {} : rune,
-    }));
-
-    setRuneSetSubset((prevState) => ({
-      ...prevState,
-      [isMainSet ? "set" : "subset"]: rune,
-    }));
-  };
+    // Update URL with build state
+    handleShare();
+  }, [build.monster, build.runes, build.runeSet]);
 
   return (
     <div>
       <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
       <div className="flex flex-col lg:flex-row w-full mb-4">
+        {/* Monster Stats Panel */}
         <div className="lg:basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md">
-          {selectedMonster ? (
+          {build.monster ? (
             <div className="flex flex-col">
               <img
-                src={selectedMonster.icon}
-                alt={selectedMonster.name}
+                src={build.monster.icon}
+                alt={build.monster.name}
                 className="w-20 h-26 mx-auto object-cover"
               />
               <p className="text-xl font-bold text-center">
-                {selectedMonster.name}
+                {build.monster.name}
               </p>
-              {["hp", "atk", "def", "acc", "cdd", "cr", "cd", "res", "pen"].map(
-                (stat) => (
-                  <div className="flex flex-row justify-between gap-2">
-                    <p className="text-lg font-bold  basis-2/4">
-                      {stat.toUpperCase()}:
-                    </p>
-                    <p className="basis-1/4 text-end">
-                      {selectedMonster.baseStats[stat]}
-                    </p>
-                    <div className="basis-1/4">
-                      {bonuses[stat] !== 0 && (
-                        <p className="text-green-400">+{bonuses[stat]}</p>
-                      )}
-                    </div>
+              {Object.entries(build.monster.baseStats).map(([stat, value]) => (
+                <div key={stat} className="flex flex-row justify-between gap-2">
+                  <p className="text-lg font-bold basis-2/4">
+                    {stat.toUpperCase()}:
+                  </p>
+                  <p className="basis-1/4 text-end">{value}</p>
+                  <div className="basis-1/4">
+                    {build.bonuses[stat] !== 0 && (
+                      <p className="text-green-400">+{build.bonuses[stat]}</p>
+                    )}
                   </div>
-                )
-              )}
+                </div>
+              ))}
             </div>
           ) : (
             <div className="w-full text-center font-bold text-4xl content-center h-full">
               Select a monster
             </div>
           )}
-          <div className="pt-2">
-            {selectedMonster && verbalSetBonus.set?.fullSetBonus && (
-              <div>
-                <p className="font-bold text-lg">Set Bonus:</p>
-                <p>
-                  {verbalSetBonus.set.name}: {verbalSetBonus.set.fullSetBonus}
-                </p>
-              </div>
-            )}
-
-            {selectedMonster && verbalSetBonus.subset?.fullSetBonus && (
-              <div>
-                <p className="font-bold text-lg">Subset Bonus:</p>
-                <p>
-                  {verbalSetBonus.subset.name}:{" "}
-                  {verbalSetBonus.subset.fullSetBonus}
-                </p>
-              </div>
-            )}
-          </div>
+          {/* Rune Set Bonus Display */}
+          {build.monster && build.runeSet.main && (
+            <div className="pt-2">
+              <p className="font-bold text-lg">Set Bonus:</p>
+              <p>{build.runeSet.main.fullSetBonus}</p>
+            </div>
+          )}
+          {build.monster && build.runeSet.sub && (
+            <div className="pt-2">
+              <p className="font-bold text-lg">Subset Bonus:</p>
+              <p>{build.runeSet.sub.fullSetBonus}</p>
+            </div>
+          )}
         </div>
+
+        {/* Rune Selection Panel */}
         <div className="lg:basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md flex flex-wrap">
           <div className="flex flex-row gap-2 mb-4 w-full">
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Set:</p>
               <select
                 className="w-full p-2 rounded-md text-black font-bold"
-                onChange={(e) => handleSetSelectChange("set", e.target.value)}
+                onChange={(e) => handleRuneSetChange("main", e.target.value)}
+                value={build.runeSet.main?.name || ""}
               >
                 <option value=""></option>
                 {runes.runeSets.map((runeSet) => (
@@ -197,10 +224,9 @@ function NewBuild() {
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Subset:</p>
               <select
-                className="w-full p-2 rounded-md text-black  font-bold"
-                onChange={(e) =>
-                  handleSetSelectChange("subset", e.target.value)
-                }
+                className="w-full p-2 rounded-md text-black font-bold"
+                onChange={(e) => handleRuneSetChange("sub", e.target.value)}
+                value={build.runeSet.sub?.name || ""}
               >
                 <option value=""></option>
                 {runes.runeSubsets.map((runeSet) => (
@@ -214,24 +240,40 @@ function NewBuild() {
 
           <div className="lg:basis-1/2 flex flex-wrap w-full justify-center">
             <RunesStar
-              setCurrentRune={setCurrentRune}
-              currentRune={currentRune}
-              runeSetSubset={runeSetSubset}
+              setCurrentRune={(slot) =>
+                setBuild((prev) => ({ ...prev, currentRuneSlot: slot }))
+              }
+              currentRune={build.currentRuneSlot}
+              runeSetSubset={{
+                set: build.runeSet.main,
+                subset: build.runeSet.sub,
+              }}
             />
           </div>
           <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center w-full">
-            {runesState.map((rune, i) => (
+            {build.runes.map((rune, index) => (
               <RuneStatSelector
-                currentRuneId={i}
-                selectedRune={rune}
-                onStatChange={(key, value) => handleChange(i, key, value)}
-                currentRune={currentRune}
-                isVisible={i === currentRune - 1}
+                key={index}
+                currentRuneId={index}
+                selectedRune={{
+                  select1: formatRuneStatForSelector(rune.stats[0]),
+                  select2: formatRuneStatForSelector(rune.stats[1]),
+                  select3: formatRuneStatForSelector(rune.stats[2]),
+                  select4: formatRuneStatForSelector(rune.stats[3]),
+                }}
+                onStatChange={(statKey, value) => {
+                  const statIndex = parseInt(statKey.slice(-1)) - 1;
+                  handleRuneStatChange(index, statIndex, value);
+                }}
+                currentRune={build.currentRuneSlot}
+                isVisible={index === build.currentRuneSlot - 1}
               />
             ))}
           </div>
         </div>
       </div>
+
+      {/* Monster Selection Grid */}
       <div className="m-4 bg-slate-500/10 rounded-md p-4">
         <div className="w-full flex flex-wrap">
           {monsters
@@ -240,14 +282,12 @@ function NewBuild() {
               <div
                 key={monster.id}
                 className="m-2 p-2 flex flex-col items-center w-20 text-center cursor-pointer hover:bg-slate-500/20 rounded-md"
-                onClick={() =>
-                  setSelectedMonster(monsters.find((m) => m.id === monster.id))
-                }
+                onClick={() => handleMonsterSelect(monster)}
               >
                 <img
                   src={monster.icon}
                   alt={monster.name}
-                  className="w-16 h-22 object-cover	"
+                  className="w-16 h-22 object-cover"
                 />
                 <div>{monster.name}</div>
               </div>
@@ -258,47 +298,81 @@ function NewBuild() {
   );
 }
 
-export default NewBuild;
+// Helper function to format rune stat for selector
+function formatRuneStatForSelector(stat) {
+  if (!stat.name) return "";
+  return `${stat.rarity},${stat.name},${stat.value},${stat.operator}`;
+}
 
-function calculateBonusStats(key, selectedMonster, statSums, bonuses) {
-  const stat = key.slice(0, -1);
-  const operator = key.slice(-1);
+// Helper function to calculate all bonuses
+function calculateAllBonuses({ monster, statSums, runeSet }) {
+  const bonuses = {
+    hp: 0,
+    atk: 0,
+    def: 0,
+    acc: 0,
+    cdd: 0,
+    cr: 0,
+    cd: 0,
+    res: 0,
+    pen: 0,
+  };
 
-  if (operator === "+") {
-    bonuses[stat] =
-      bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
-    bonuses[stat] = Math.round(bonuses[stat]);
-    bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+  if (!monster) return bonuses;
+
+  // Calculate main set bonuses
+  if (runeSet.main) {
+    const mainBonus = calculateSetBonus(monster, runeSet.main);
+    Object.entries(mainBonus).forEach(([stat, value]) => {
+      bonuses[stat] += value;
+    });
   }
-  if (operator === "%") {
-    if (stat === "hp" || stat === "atk" || stat === "def") {
-      bonuses[stat] =
-        bonuses[stat] + selectedMonster.baseStats[stat] * (statSums[key] / 100);
-      bonuses[stat] = Math.round(bonuses[stat]);
+
+  // Calculate subset bonuses
+  if (runeSet.sub) {
+    const subBonus = calculateSetBonus(monster, runeSet.sub);
+    Object.entries(subBonus).forEach(([stat, value]) => {
+      bonuses[stat] += value;
+    });
+  }
+
+  // Calculate stat sum bonuses
+  Object.entries(statSums).forEach(([key, value]) => {
+    const stat = key.slice(0, -1);
+    const operator = key.slice(-1);
+
+    if (operator === "+") {
+      bonuses[stat] += value;
+    } else if (operator === "%" && ["hp", "atk", "def"].includes(stat)) {
+      bonuses[stat] += monster.baseStats[stat] * (value / 100);
     } else {
-      bonuses[stat] =
-        bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
-      bonuses[stat] = Math.round(bonuses[stat]);
-      bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+      bonuses[stat] += value;
     }
+  });
+
+  // Round all bonus values
+  Object.keys(bonuses).forEach((key) => {
+    bonuses[key] = Math.round(bonuses[key]);
+  });
+
+  return bonuses;
+}
+
+// Helper function to calculate set bonus
+function calculateSetBonus(monster, set) {
+  const bonuses = {};
+  if (!set.value) return bonuses;
+
+  const { fullSetBonus: stat, operator, value } = set;
+  const baseValue = monster.baseStats[stat];
+
+  if (operator === "%" && ["hp", "atk", "def"].includes(stat)) {
+    bonuses[stat] = baseValue * (value / 100);
+  } else {
+    bonuses[stat] = value;
   }
 
   return bonuses;
 }
 
-function calculateSetBonusStats(selectedMonster, setBonus, bonuses) {
-  const { fullSetBonus: stat, operator, value } = setBonus;
-  const baseValue = selectedMonster.baseStats[stat];
-
-  const isPercentageStat =
-    operator === "%" && ["hp", "atk", "def"].includes(stat);
-
-  bonuses[stat] = Math.round(
-    bonuses[stat] +
-      (isPercentageStat
-        ? baseValue * (value / 100)
-        : baseValue + value - baseValue)
-  );
-
-  return bonuses;
-}
+export default NewBuild;
