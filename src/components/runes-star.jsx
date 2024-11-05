@@ -1,6 +1,6 @@
 import React from "react";
 
-const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
+const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
   const baseCircleStyles = `absolute flex items-center justify-center w-16
       lg:w-20 h-16 lg:h-20 bg-blue-800 rounded-full cursor-pointer
       hover:drop-shadow-[0_0_0.25rem_rgba(255,255,255,1)]`;
@@ -24,7 +24,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pt-2 lg:pt-4 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.set?.character}
+          {runeSet?.character}
         </p>
       </div>
 
@@ -46,7 +46,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pr-2 pt-3 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.subset?.character}
+          {runeSubset?.character}
         </p>
       </div>
 
@@ -68,7 +68,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pr-2 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.set?.character}
+          {runeSet?.character}
         </p>
       </div>
 
@@ -90,7 +90,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pb-2 lg:pb-4 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.subset?.character}
+          {runeSubset?.character}
         </p>
       </div>
 
@@ -112,7 +112,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pl-2 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.set?.character}
+          {runeSet?.character}
         </p>
       </div>
 
@@ -134,7 +134,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSetSubset }) => {
           />
         </div>
         <p className="pl-2 pt-3 absolute text-white text-xl lg:text-2xl font-runes">
-          {runeSetSubset.subset?.character}
+          {runeSubset?.character}
         </p>
       </div>
     </div>

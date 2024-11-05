@@ -7,8 +7,8 @@ export const serializeBuildState = (state) => {
     m: state.monster,
 
     // Rune sets (main and sub)
-    rs: state.runeSet.main?.name,
-    rss: state.runeSet.sub?.name,
+    rs: state.runeSet.main,
+    rss: state.runeSet.sub,
 
     // Compress runes array to minimal format
     r: state.runes.map(
@@ -50,10 +50,10 @@ export const deserializeBuildState = (
 
     // Update rune sets if present
     if (decoded.rs) {
-      state.runeSet.main = { name: decoded.rs };
+      state.runeSet.main = decoded.rs;
     }
     if (decoded.rss) {
-      state.runeSet.sub = { name: decoded.rss };
+      state.runeSet.sub = decoded.rss;
     }
 
     // Update runes if present

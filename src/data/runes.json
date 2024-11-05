@@ -5,122 +5,142 @@
       "fullSetBonus": "hp",
       "value": 15,
       "operator": "%",
-      "character": "u"
+      "character": "u",
+      "description": "Increases HP by 15%"
     },
     {
       "name": "Guard",
       "fullSetBonus": "def",
       "value": 15,
       "operator": "%",
-      "character": "i"
+      "character": "i",
+      "description": "Increases DEF by 15%"
     },
     {
       "name": "Fatal",
       "fullSetBonus": "atk",
       "value": 15,
       "operator": "%",
-      "character": "t"
+      "character": "t",
+      "description": "Increases ATK by 15%"
     },
     {
       "name": "Rage",
       "fullSetBonus": "cd",
       "value": 25,
       "operator": "%",
-      "character": "a"
+      "character": "a",
+      "description": "Increases Crit Damage by 25%"
     },
     {
       "name": "Vampire",
       "fullSetBonus": "15% Life Steal",
-      "character": "e"
+      "character": "e",
+      "description": "Recovers 15% of DMG dealt as HP"
     },
     {
       "name": "Violent",
       "fullSetBonus": "Card Return Rate +30%",
-      "character": "f"
+      "character": "f",
+      "description": "Increases Card Return Rate by 30%"
     },
     {
       "name": "Destroy",
       "fullSetBonus": "Destroys Enemy's Max hp (50% of DMG)",
-      "character": "m"
+      "character": "m",
+      "description": "Destroys Enemy's Max hp (50% of DMG)"
     },
     {
       "name": "Endure",
       "fullSetBonus": "res",
       "value": 30,
       "operator": "%",
-      "character": "n"
+      "character": "n",
+      "description": "Increases Resistance by 30%"
     },
     {
       "name": "Focus",
       "fullSetBonus": "acc",
       "value": 30,
       "operator": "%",
-      "character": "j"
+      "character": "j",
+      "description": "Increases Accuracy by 30%"
     },
     {
       "name": "Swift",
       "fullSetBonus": "Mana Cost -1 (1 time)",
-      "character": "d"
+      "character": "d",
+      "description": "Reduces Mana Cost by 1 (1 time)"
     },
     {
       "name": "Will",
       "fullSetBonus": "Immunity (90S Cooldown)",
-      "character": "g"
+      "character": "g",
+      "description": "Grants Immunity (90s Cooldown)"
     }
   ],
   "runeSubsets": [
     {
       "name": "Fight",
       "fullSetBonus": "Atk of all allies in line +4%",
-      "character": "s"
+      "character": "s",
+      "description": "Increases ATK of all allies in line by 4%"
     },
     {
       "name": "Determination",
       "fullSetBonus": "Def of all allies in line +4%",
-      "character": "q"
+      "character": "q",
+      "description": "Increases DEF of all allies in line by 4%"
     },
     {
       "name": "Enhance",
       "fullSetBonus": "HP of all allies in line +4%",
-      "character": "r"
+      "character": "r",
+      "description": "Increases HP of all allies in line by 4%"
     },
     {
       "name": "Will",
       "fullSetBonus": "Immunity (90s Cooldown)",
-      "character": "g"
+      "character": "g",
+      "description": "Grants Immunity (90s Cooldown)"
     },
     {
       "name": "Penetration",
       "fullSetBonus": "pen",
       "value": 10,
       "operator": "%",
-      "character": "x"
+      "character": "x",
+      "description": "Increases Defense Penetration by 10%"
     },
     {
       "name": "Swift",
       "fullSetBonus": "Mana cost -1 (1 time)",
-      "character": "d"
+      "character": "d",
+      "description": "Reduces Mana Cost by 1 (1 time)"
     },
     {
       "name": "Endure",
       "fullSetBonus": "res",
       "value": 30,
       "operator": "%",
-      "character": "n"
+      "character": "n",
+      "description": "Increases Resistance by 30%"
     },
     {
       "name": "Focus",
       "fullSetBonus": "acc",
       "value": 30,
       "operator": "%",
-      "character": "j"
+      "character": "j",
+      "description": "Increases Accuracy by 30%"
     },
     {
       "name": "Blessing",
       "fullSetBonus": "cdd",
       "value": 25,
       "operator": "%",
-      "character": "y"
+      "character": "y",
+      "description": "Increases Crit Damage Reduction by 25%"
     }
   ],
   "additionalStats": {

@@ -9,6 +9,8 @@ import {
 } from "../../utils/serializer";
 import { useSearchParams } from "react-router-dom";
 
+const PERCENTAGE_STATS = ["cdd", "cr", "cd", "res", "pen"];
+
 // Initial state structure for a build
 export const initialBuildState = {
   monster: null,
@@ -174,10 +176,18 @@ function NewBuild() {
                   <p className="text-lg font-bold basis-2/4">
                     {stat.toUpperCase()}:
                   </p>
-                  <p className="basis-1/4 text-end">{value}</p>
+                  <p className="basis-1/4 text-end">
+                    {value}
+                    {PERCENTAGE_STATS.includes(stat.toLowerCase()) ? "%" : ""}
+                  </p>
                   <div className="basis-1/4">
                     {build.bonuses[stat] !== 0 && (
-                      <p className="text-green-400">+{build.bonuses[stat]}</p>
+                      <p className="text-green-400">
+                        +{build.bonuses[stat]}
+                        {PERCENTAGE_STATS.includes(stat.toLowerCase())
+                          ? "%"
+                          : ""}
+                      </p>
                     )}
                   </div>
                 </div>
@@ -192,13 +202,13 @@ function NewBuild() {
           {build.monster && build.runeSet.main && (
             <div className="pt-2">
               <p className="font-bold text-lg">Set Bonus:</p>
-              <p>{build.runeSet.main.fullSetBonus}</p>
+              <p>{build.runeSet.main.description}</p>
             </div>
           )}
           {build.monster && build.runeSet.sub && (
             <div className="pt-2">
               <p className="font-bold text-lg">Subset Bonus:</p>
-              <p>{build.runeSet.sub.fullSetBonus}</p>
+              <p>{build.runeSet.sub.description}</p>
             </div>
           )}
         </div>
@@ -244,10 +254,8 @@ function NewBuild() {
                 setBuild((prev) => ({ ...prev, currentRuneSlot: slot }))
               }
               currentRune={build.currentRuneSlot}
-              runeSetSubset={{
-                set: build.runeSet.main,
-                subset: build.runeSet.sub,
-              }}
+              runeSet={build.runeSet.main}
+              runeSubset={build.runeSet.sub}
             />
           </div>
           <div className="lg:basis-1/2 flex flex-wrap gap-2 items-center w-full">
