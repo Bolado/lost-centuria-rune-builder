@@ -5,7 +5,7 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
       lg:w-20 h-16 lg:h-20 bg-blue-800 rounded-full cursor-pointer
       hover:drop-shadow-[0_0_0.25rem_rgba(255,255,255,1)]`;
   return (
-    <div className="relative w-full max-w-96 aspect-square border-2 border-black">
+    <div className="relative w-full h-full max-h-72 max-w-72 min-w-72 lg:max-w-96 lg:max-h-96 lg:min-w-96 aspect-square border-2 border-black flex items-center justify-center">
       {/* Circle 1 (Top) */}
       <div
         className={`${baseCircleStyles} left-1/2 top-[8%] -translate-x-1/2
@@ -16,13 +16,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(1)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-1.png"
-            alt="Rune Slot 1"
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {runeSet && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-1.png"
+              alt="Rune Slot 1"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
         <p className="pt-2 lg:pt-4 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSet?.character}
         </p>
@@ -38,13 +40,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(2)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-2.png"
-            alt="Rune Slot 2"
-            className="w-full h-full object-contain mt-1"
-          />
-        </div>
+        {runeSubset && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-2.png"
+              alt="Rune Slot 2"
+              className="w-full h-full object-contain mt-1"
+            />
+          </div>
+        )}
         <p className="pr-2 pt-3 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSubset?.character}
         </p>
@@ -60,13 +64,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(3)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-3.png"
-            alt="Rune Slot 3"
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {runeSet && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-3.png"
+              alt="Rune Slot 3"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
         <p className="pr-2 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSet?.character}
         </p>
@@ -82,13 +88,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(4)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-4.png"
-            alt="Rune Slot 4"
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {runeSubset && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-4.png"
+              alt="Rune Slot 4"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
         <p className="pb-2 lg:pb-4 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSubset?.character}
         </p>
@@ -104,13 +112,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(5)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-5.png"
-            alt="Rune Slot 5"
-            className="w-full h-full object-contain"
-          />
-        </div>
+        {runeSet && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-5.png"
+              alt="Rune Slot 5"
+              className="w-full h-full object-contain"
+            />
+          </div>
+        )}
         <p className="pl-2 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSet?.character}
         </p>
@@ -126,13 +136,15 @@ const RunesStar = ({ setCurrentRune, currentRune, runeSet, runeSubset }) => {
           }`}
         onClick={() => setCurrentRune(6)}
       >
-        <div className="relative w-3/4 h-3/4">
-          <img
-            src="https://swrunebuilder.com/images/Rune-slot-6.png"
-            alt="Rune Slot 6"
-            className="w-full h-full object-contain mt-1"
-          />
-        </div>
+        {runeSubset && (
+          <div className="relative w-3/4 h-3/4">
+            <img
+              src="https://swrunebuilder.com/images/Rune-slot-6.png"
+              alt="Rune Slot 6"
+              className="w-full h-full object-contain mt-1"
+            />
+          </div>
+        )}
         <p className="pl-2 pt-3 absolute text-white text-xl lg:text-2xl font-runes">
           {runeSubset?.character}
         </p>

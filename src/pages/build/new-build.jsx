@@ -151,7 +151,7 @@ function NewBuild() {
     }
   }, [build.monster, build.runes, build.runeSet, handleShare]);
   return (
-    <div>
+    <div className="max-w-7xl mx-auto">
       <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
       <div className="flex flex-col lg:flex-row w-full mb-4">
         {/* Monster Stats Panel */}
@@ -209,7 +209,7 @@ function NewBuild() {
         </div>
 
         {/* Rune Selection Panel */}
-        <div className="lg:basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md flex flex-wrap">
+        <div className="lg:basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md flex flex-wrap justify-center">
           <div className="flex flex-row gap-2 mb-4 w-full">
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Set:</p>
