@@ -47,33 +47,24 @@ export const initialBuildState = {
 
 function NewBuild() {
   const [build, setBuild] = React.useState(initialBuildState);
-  const [, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
-  // Load build from URL
-  const loadBuildFromUrl = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const buildData = urlParams.get("build");
+  // Function to update URL with build state
+  const handleShare = React.useCallback(() => {
+    const encoded = serializeBuildState(build);
+    setSearchParams({ build: encoded }, { replace: true });
+  }, [build, setSearchParams]);
 
+  // Load build from URL and update state
+  React.useEffect(() => {
+    const buildData = searchParams.get("build");
     if (buildData) {
       const decodedState = deserializeBuildState(buildData, initialBuildState);
-      console.log("Decoded state:", decodedState);
-      // Update your state with decodedState
       setBuild(decodedState);
     }
-  };
+  }, [searchParams]);
 
-  // Share handler
-  const handleShare = () => {
-    const encoded = serializeBuildState(build);
-    setSearchParams({ build: encoded });
-    // Copy to clipboard code...
-  };
-
-  // Update URL with build state
-  React.useEffect(() => {
-    loadBuildFromUrl();
-  }, []);
-
+  // Function to handle monster selection
   const handleMonsterSelect = (selectedMonster) => {
     setBuild((prev) => ({
       ...prev,
@@ -82,8 +73,8 @@ function NewBuild() {
   };
 
   const handleRuneSetChange = (type, value) => {
-    const isMainSet = type === "main";
-    const runeSet = runes[isMainSet ? "runeSets" : "runeSubsets"].find(
+    const isMainRuneSet = type === "main";
+    const runeSet = runes[isMainRuneSet ? "runeSets" : "runeSubsets"].find(
       (set) => set.name === value
     );
 
@@ -91,7 +82,7 @@ function NewBuild() {
       ...prev,
       runeSet: {
         ...prev.runeSet,
-        [isMainSet ? "main" : "sub"]: runeSet || null,
+        [isMainRuneSet ? "main" : "sub"]: runeSet || null,
       },
     }));
   };
@@ -124,6 +115,7 @@ function NewBuild() {
     });
   };
 
+  // Split the effects to avoid the dependency cycle
   React.useEffect(() => {
     if (!build.monster) return;
 
@@ -150,11 +142,14 @@ function NewBuild() {
       statSums: sums,
       bonuses: newBonuses,
     }));
-
-    // Update URL with build state
-    handleShare();
   }, [build.monster, build.runes, build.runeSet]);
 
+  // Separate effect for URL updates
+  React.useEffect(() => {
+    if (build.monster) {
+      handleShare();
+    }
+  }, [build.monster, build.runes, build.runeSet, handleShare]);
   return (
     <div>
       <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
