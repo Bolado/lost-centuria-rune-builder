@@ -9,7 +9,7 @@ import {
 } from "../../utils/serializer";
 import { useSearchParams } from "react-router-dom";
 
-const PERCENTAGE_STATS = ["cdd", "cr", "cd", "res", "pen"];
+const PERCENTAGE_STATS = ["acc", "cdd", "cr", "cd", "res", "pen"];
 
 // Initial state structure for a build
 export const initialBuildState = {
