@@ -150,14 +150,14 @@
         "stats": "cdd",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6.5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6
       },
       {
         "name": "Crit Rate",
@@ -178,56 +178,56 @@
         "stats": "res",
         "value": 6,
         "operator": "%",
-        "enchant": 5
+        "enchant": 5.5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 5,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 5,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 5,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 3,
         "operator": "%",
-        "enchant": 5
+        "enchant": 2.5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 10,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 10,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 150,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       }
     ],
     "rare": [
@@ -236,14 +236,14 @@
         "stats": "cdd",
         "value": 8,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6.5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 8,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6
       },
       {
         "name": "Crit Rate",
@@ -264,56 +264,56 @@
         "stats": "res",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 5.5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 6,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 6,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 6,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 3.5,
         "operator": "%",
-        "enchant": 5
+        "enchant": 2.5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 12,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 12,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 180,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       }
     ],
     "epic": [
@@ -322,14 +322,14 @@
         "stats": "cdd",
         "value": 9,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6.5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 9,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6
       },
       {
         "name": "Crit Rate",
@@ -350,56 +350,56 @@
         "stats": "res",
         "value": 8,
         "operator": "%",
-        "enchant": 5
+        "enchant": 5.5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 7,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 4,
         "operator": "%",
-        "enchant": 5
+        "enchant": 2.5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 14,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 14,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 210,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       }
     ],
     "legendary": [
@@ -408,14 +408,14 @@
         "stats": "cdd",
         "value": 11,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6.5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 11,
         "operator": "%",
-        "enchant": 5
+        "enchant": 6
       },
       {
         "name": "Crit Rate",
@@ -436,56 +436,56 @@
         "stats": "res",
         "value": 10,
         "operator": "%",
-        "enchant": 5
+        "enchant": 5.5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 9,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 9,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 9,
         "operator": "%",
-        "enchant": 5
+        "enchant": 4.5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 5,
         "operator": "%",
-        "enchant": 5
+        "enchant": 2.5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 18,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 18,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 270,
         "operator": "+",
-        "enchant": 5
+        "enchant": 9
       }
     ]
   }

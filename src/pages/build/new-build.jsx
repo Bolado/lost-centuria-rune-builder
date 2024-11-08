@@ -47,7 +47,10 @@ export const initialBuildState = {
 };
 
 function NewBuild() {
-  const [build, setBuild] = React.useState(initialBuildState);
+  const [build, setBuild] = React.useState({
+    ...initialBuildState,
+    currentRuneSlot: 1, // Ensure this exists in initial state
+  });
   const [searchParams, setSearchParams] = useSearchParams();
 
   // Function to update URL with build state
@@ -70,6 +73,7 @@ function NewBuild() {
     setBuild((prev) => ({
       ...prev,
       monster: monsters.find((m) => m.id === selectedMonster.id),
+      currentRuneSlot: prev.currentRuneSlot,
     }));
   };
 
@@ -85,6 +89,7 @@ function NewBuild() {
         ...prev.runeSet,
         [isMainRuneSet ? "main" : "sub"]: runeSet || null,
       },
+      currentRuneSlot: prev.currentRuneSlot, // Preserve slot
     }));
   };
 
@@ -113,8 +118,16 @@ function NewBuild() {
       return {
         ...prev,
         runes: updatedRunes,
+        currentRuneSlot: prev.currentRuneSlot,
       };
     });
+  };
+
+  const handleRuneSlotChange = (slot) => {
+    setBuild((prev) => ({
+      ...prev,
+      currentRuneSlot: slot,
+    }));
   };
 
   // Split the effects to avoid the dependency cycle
@@ -143,6 +156,7 @@ function NewBuild() {
       ...prev,
       statSums: sums,
       bonuses: newBonuses,
+      currentRuneSlot: prev.currentRuneSlot,
     }));
   }, [build.monster, build.runes, build.runeSet]);
 
@@ -247,9 +261,7 @@ function NewBuild() {
 
           <div className="lg:basis-1/2 flex flex-wrap w-full justify-center">
             <RunesStar
-              setCurrentRune={(slot) =>
-                setBuild((prev) => ({ ...prev, currentRuneSlot: slot }))
-              }
+              setCurrentRune={(slot) => handleRuneSlotChange(slot)}
               currentRune={build.currentRuneSlot}
               runeSet={build.runeSet.main}
               runeSubset={build.runeSet.sub}
@@ -325,6 +337,28 @@ function calculateAllBonuses({ monster, statSums, runeSet }) {
 
   if (!monster) return bonuses;
 
+  if (runeSet.main) {
+    const bonus = {
+      "atk%": 32,
+      "hp%": 32,
+      "def%": 32,
+    };
+    Object.keys(bonus).forEach((key) => {
+      calculateBonusStats(key, monster, bonus, bonuses);
+    });
+  }
+
+  if (runeSet.sub) {
+    const bonus = {
+      "atk+": 160,
+      "hp+": 2400,
+      "def+": 160,
+    };
+    Object.keys(bonus).forEach((key) => {
+      calculateBonusStats(key, monster, bonus, bonuses);
+    });
+  }
+
   // Calculate main set bonuses
   if (runeSet.main) {
     const mainBonus = calculateSetBonus(monster, runeSet.main);
@@ -355,9 +389,14 @@ function calculateAllBonuses({ monster, statSums, runeSet }) {
     }
   });
 
-  // Round all bonus values
+  // // Round all bonus values
+  // Object.keys(bonuses).forEach((key) => {
+  //   bonuses[key] = Math.round(bonuses[key]);
+  // });
+
+  // limit the decimal places to 2
   Object.keys(bonuses).forEach((key) => {
-    bonuses[key] = Math.round(bonuses[key]);
+    bonuses[key] = Math.round(bonuses[key] * 100) / 100;
   });
 
   return bonuses;
@@ -381,3 +420,29 @@ function calculateSetBonus(monster, set) {
 }
 
 export default NewBuild;
+
+function calculateBonusStats(key, selectedMonster, statSums, bonuses) {
+  const stat = key.slice(0, -1);
+  const operator = key.slice(-1);
+
+  if (operator === "+") {
+    bonuses[stat] =
+      bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
+    bonuses[stat] = Math.round(bonuses[stat]);
+    bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+  }
+  if (operator === "%") {
+    if (stat === "hp" || stat === "atk" || stat === "def") {
+      bonuses[stat] =
+        bonuses[stat] + selectedMonster.baseStats[stat] * (statSums[key] / 100);
+      bonuses[stat] = Math.round(bonuses[stat]);
+    } else {
+      bonuses[stat] =
+        bonuses[stat] + selectedMonster.baseStats[stat] + statSums[key];
+      bonuses[stat] = Math.round(bonuses[stat]);
+      bonuses[stat] = bonuses[stat] - selectedMonster.baseStats[stat];
+    }
+  }
+
+  return bonuses;
+}

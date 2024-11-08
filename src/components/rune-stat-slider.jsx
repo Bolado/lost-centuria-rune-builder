@@ -3,7 +3,7 @@ import React, { memo, useCallback } from "react";
 // Define available rarity levels with their corresponding visual styles
 const RARITY_LEVELS = [
   { value: "normal", color: "bg-gray-500", textColor: "text-gray-500" },
-  { value: "rare", color: "bg-blue-500", textColor: "text-blue-500" },
+  { value: "rare", color: "bg-green-500", textColor: "text-green-500" },
   { value: "epic", color: "bg-purple-500", textColor: "text-purple-500" },
   { value: "legendary", color: "bg-orange-500", textColor: "text-orange-500" },
 ];

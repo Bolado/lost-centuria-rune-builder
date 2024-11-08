@@ -29,8 +29,6 @@ const RuneStatSelector = memo(
       if (!statString)
         return { rarity: "normal", stat: "", operator: "", enchant: 0 };
       const [rarity, stat, , operator, enchant] = statString.split(",");
-      console.log(statString);
-      console.log(rarity, stat, operator, enchant);
       return { rarity, stat, operator, enchant: parseInt(enchant) };
     };
 
@@ -86,8 +84,6 @@ const RuneStatSelector = memo(
             ? selectedValueUpdated.value + value * selectedValueUpdated.enchant
             : selectedValueUpdated.value;
 
-        console.log(enchantedValue);
-
         onStatChange(
           slotName,
           `${currentStat.rarity},${currentStat.stat},${enchantedValue},${currentStat.operator},${value}`
@@ -107,7 +103,6 @@ const RuneStatSelector = memo(
         );
 
         if (selectedValueUpdated) {
-          console.log(selectedValueUpdated);
           // update the stats value based on the enchant value
           let enchantedValue =
             enchants[slotName] > 0

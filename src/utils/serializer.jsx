@@ -10,6 +10,9 @@ export const serializeBuildState = (state) => {
     rs: state.runeSet.main,
     rss: state.runeSet.sub,
 
+    // Current rune slot
+    crs: state.currentRuneSlot,
+
     // Compress runes array to minimal format
     r: state.runes.map(
       (rune) =>
@@ -55,6 +58,11 @@ export const deserializeBuildState = (
     }
     if (decoded.rss) {
       state.runeSet.sub = decoded.rss;
+    }
+
+    // Update current rune slot if present
+    if (decoded.crs) {
+      state.currentRuneSlot = decoded.crs;
     }
 
     // Update runes if present
