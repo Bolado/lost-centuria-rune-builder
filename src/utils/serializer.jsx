@@ -22,6 +22,7 @@ export const serializeBuildState = (state) => {
                   r: stat.rarity, // first letter of rarity (n/r/e/l)
                   v: stat.value, // value
                   o: stat.operator, // operator
+                  e: stat.enchant || 0, // Add enchants
                 }
               : null
           )
@@ -67,6 +68,7 @@ export const deserializeBuildState = (
                 rarity: stat.r,
                 value: stat.v,
                 operator: stat.o,
+                enchant: stat.e || 0,
               };
             }
           });

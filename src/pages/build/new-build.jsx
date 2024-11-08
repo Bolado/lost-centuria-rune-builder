@@ -29,6 +29,7 @@ export const initialBuildState = {
           rarity: "normal",
           value: null,
           operator: null,
+          enchant: 0,
         })),
     })),
   bonuses: {
@@ -99,12 +100,13 @@ function NewBuild() {
           operator: null,
         };
       } else {
-        const [rarity, stat, value, operator] = newStat.split(",");
+        const [rarity, stat, value, operator, enchant] = newStat.split(",");
         updatedRunes[runeIndex].stats[statIndex] = {
           name: stat,
           rarity,
           value: parseFloat(value),
           operator,
+          enchant,
         };
       }
 
@@ -304,7 +306,7 @@ function NewBuild() {
 // Helper function to format rune stat for selector
 function formatRuneStatForSelector(stat) {
   if (!stat.name) return "";
-  return `${stat.rarity},${stat.name},${stat.value},${stat.operator}`;
+  return `${stat.rarity},${stat.name},${stat.value},${stat.operator},${stat.enchant}`;
 }
 
 // Helper function to calculate all bonuses

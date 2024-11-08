@@ -149,73 +149,85 @@
         "name": "Crit Damage Reduction",
         "stats": "cdd",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Rate",
         "stats": "cr",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Accuracy",
         "stats": "acc",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Resistance",
         "stats": "res",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 5,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 5,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 5,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 3,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 10,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 10,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 150,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       }
     ],
     "rare": [
@@ -223,73 +235,85 @@
         "name": "Crit Damage Reduction",
         "stats": "cdd",
         "value": 8,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 8,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Rate",
         "stats": "cr",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Accuracy",
         "stats": "acc",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Resistance",
         "stats": "res",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 6,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 3.5,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 12,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 12,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 180,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       }
     ],
     "epic": [
@@ -297,73 +321,85 @@
         "name": "Crit Damage Reduction",
         "stats": "cdd",
         "value": 9,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 9,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Rate",
         "stats": "cr",
         "value": 8,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Accuracy",
         "stats": "acc",
         "value": 8,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Resistance",
         "stats": "res",
         "value": 8,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 7,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 4,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 14,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 14,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 210,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       }
     ],
     "legendary": [
@@ -371,73 +407,85 @@
         "name": "Crit Damage Reduction",
         "stats": "cdd",
         "value": 11,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Damage",
         "stats": "cd",
         "value": 11,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Crit Rate",
         "stats": "cr",
         "value": 10,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Accuracy",
         "stats": "acc",
         "value": 10,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Resistance",
         "stats": "res",
         "value": 10,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "HP%",
         "stats": "hp",
         "value": 9,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF%",
         "stats": "def",
         "value": 9,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "ATK%",
         "stats": "atk",
         "value": 9,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "Defense Penetration",
         "stats": "pen",
         "value": 5,
-        "operator": "%"
+        "operator": "%",
+        "enchant": 5
       },
       {
         "name": "DEF",
         "stats": "def",
         "value": 18,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "ATK",
         "stats": "atk",
         "value": 18,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       },
       {
         "name": "HP",
         "stats": "hp",
         "value": 270,
-        "operator": "+"
+        "operator": "+",
+        "enchant": 5
       }
     ]
   }
