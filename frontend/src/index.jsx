@@ -20,19 +20,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/build/new",
-    loader: async () => {
-      const response = await fetch("/api/build/new", {
-        method: "GET",
-      });
-
-      if (!response.ok) {
-        throw new Error("Failed to create new build");
-      }
-
-      const data = await response.json();
-      return redirect(`/build/${data.id}`);
-    },
-    element: null,
+    element: <Builder />,
     errorElement: <ErrorPage />,
   },
   {

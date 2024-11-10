@@ -29,15 +29,6 @@ def save_build(current_user):
     result = mongo.cx.db.builds.insert_one({'build': build_object, 'user_id': user_id})
     return jsonify({'status':'created','id': str(result.inserted_id)})
 
-# This route will handle the creation of a new build whenever the user navigates to /build/new. It will return a new build JSON with the id.
-@bp.route('/build/new', methods=['GET'])
-@token_required
-def new_build(current_user):
-    user_id = current_user['user_id']
-    result = mongo.cx.db.builds.insert_one({'build': {}, 'user_id': user_id})
-    if result:
-        return jsonify({'id': str(result.inserted_id)})
-
 # This route will handle the retrieval of a build whenever the user navigates to /build/:id. It will return the build JSON if it exists in the database, otherwise, it will redirect to /build/new.
 @bp.route('/build/<id>', methods=['GET'])
 def get_url(id):

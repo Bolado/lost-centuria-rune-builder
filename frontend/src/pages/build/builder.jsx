@@ -9,6 +9,7 @@ import {
 } from "../../utils/serializer";
 import { useLoaderData } from "react-router-dom";
 import ButtonPrimary from "../../components/button-primary";
+import ButtonConfirm from "../../components/button-confirm";
 
 const PERCENTAGE_STATS = ["acc", "cdd", "cr", "cd", "res", "pen"];
 
@@ -216,39 +217,21 @@ function Builder() {
             <ButtonPrimary
               className="mt-8"
               onClick={() => {
-                const serializedState = serializeBuildState(build);
-                // make a post request to /api/build/save with the serialized state as the body\
-
-                //get the current path and check if it has an id
-                const id = window.location.pathname.split("/").pop();
-
-                fetch("/api/build/save", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({ id: id, build: serializedState }),
-                })
-                  .then((response) => {
-                    if (!response.ok) {
-                      throw new Error("Failed to save build");
-                    }
-                    return response.json();
-                  })
-                  .then((data) => {
-                    console.log(data);
-                    // if the returned id is not on the url, change the url with the new id
-                    if (!window.location.pathname.includes(data.id)) {
-                      window.history.pushState({}, "", `/build/${data.id}`);
-                    }
-                  })
-                  .catch((error) => {
-                    console.error(error);
-                  });
+                saveBuild(build).catch(console.error);
               }}
             >
               Save Build
             </ButtonPrimary>
+          )}
+          {build.monster && (
+            <ButtonConfirm
+              className="mt-4"
+              onClick={() => {
+                newBuild(setBuild);
+              }}
+            >
+              Clear Build
+            </ButtonConfirm>
           )}
         </div>
 
@@ -474,3 +457,47 @@ function calculateBonusStats(key, selectedMonster, statSums, bonuses) {
 
   return bonuses;
 }
+
+const saveBuild = async (build) => {
+  const serializedState = serializeBuildState(build);
+  const currentId = window.location.pathname.includes("new")
+    ? null
+    : window.location.pathname.split("/").pop();
+
+  try {
+    const response = await fetch("/api/build/save", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        ...(currentId && { id: currentId }),
+        build: serializedState,
+      }),
+    });
+
+    if (!response.ok) {
+      throw new Error("Failed to save build");
+    }
+
+    const data = await response.json();
+
+    // Update URL if needed
+    if (!window.location.pathname.includes(data.id)) {
+      window.history.pushState({}, "", `/build/${data.id}`);
+    }
+
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
+
+const newBuild = (setBuild) => {
+  // reset the url
+  window.history.pushState({}, "", "/build/new");
+
+  // Reset the build state
+  setBuild(initialBuildState);
+};
