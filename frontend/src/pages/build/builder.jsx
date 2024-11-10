@@ -7,7 +7,8 @@ import {
   deserializeBuildState,
   serializeBuildState,
 } from "../../utils/serializer";
-import { useSearchParams } from "react-router-dom";
+import { useLoaderData } from "react-router-dom";
+import ButtonPrimary from "../../components/button-primary";
 
 const PERCENTAGE_STATS = ["acc", "cdd", "cr", "cd", "res", "pen"];
 
@@ -46,27 +47,22 @@ export const initialBuildState = {
   statSums: {},
 };
 
-function NewBuild() {
+function Builder() {
+  // Load the initial state from the loader data
+  const loadedData = useLoaderData();
+
   const [build, setBuild] = React.useState({
     ...initialBuildState,
     currentRuneSlot: 1, // Ensure this exists in initial state
   });
-  const [searchParams, setSearchParams] = useSearchParams();
 
-  // Function to update URL with build state
-  const handleShare = React.useCallback(() => {
-    const encoded = serializeBuildState(build);
-    setSearchParams({ build: encoded }, { replace: true });
-  }, [build, setSearchParams]);
-
-  // Load build from URL and update state
+  // Load the build state from the loader data
   React.useEffect(() => {
-    const buildData = searchParams.get("build");
-    if (buildData) {
-      const decodedState = deserializeBuildState(buildData, initialBuildState);
+    if (loadedData) {
+      const decodedState = deserializeBuildState(loadedData, initialBuildState);
       setBuild(decodedState);
     }
-  }, [searchParams]);
+  }, [loadedData]);
 
   // Function to handle monster selection
   const handleMonsterSelect = (selectedMonster) => {
@@ -160,18 +156,12 @@ function NewBuild() {
     }));
   }, [build.monster, build.runes, build.runeSet]);
 
-  // Separate effect for URL updates
-  React.useEffect(() => {
-    if (build.monster) {
-      handleShare();
-    }
-  }, [build.monster, build.runes, build.runeSet, handleShare]);
   return (
     <div className="max-w-7xl mx-auto">
-      <h1 className="cinzel text-4xl text-center my-8">New Build</h1>
+      <h1 className="cinzel text-4xl text-center my-8">Builder</h1>
       <div className="flex flex-col lg:flex-row w-full mb-4">
         {/* Monster Stats Panel */}
-        <div className="lg:basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md">
+        <div className="lg:basis-1/3 bg-slate-500/10 m-4 p-4 rounded-md gap-2 flex flex-col">
           {build.monster ? (
             <div className="flex flex-col">
               <img
@@ -211,16 +201,54 @@ function NewBuild() {
           )}
           {/* Rune Set Bonus Display */}
           {build.monster && build.runeSet.main && (
-            <div className="pt-2">
+            <div>
               <p className="font-bold text-lg">Set Bonus:</p>
               <p>{build.runeSet.main.description}</p>
             </div>
           )}
           {build.monster && build.runeSet.sub && (
-            <div className="pt-2">
+            <div>
               <p className="font-bold text-lg">Subset Bonus:</p>
               <p>{build.runeSet.sub.description}</p>
             </div>
+          )}
+          {build.monster && (
+            <ButtonPrimary
+              className="mt-8"
+              onClick={() => {
+                const serializedState = serializeBuildState(build);
+                // make a post request to /api/build/save with the serialized state as the body\
+
+                //get the current path and check if it has an id
+                const id = window.location.pathname.split("/").pop();
+
+                fetch("/api/build/save", {
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({ id: id, build: serializedState }),
+                })
+                  .then((response) => {
+                    if (!response.ok) {
+                      throw new Error("Failed to save build");
+                    }
+                    return response.json();
+                  })
+                  .then((data) => {
+                    console.log(data);
+                    // if the returned id is not on the url, change the url with the new id
+                    if (!window.location.pathname.includes(data.id)) {
+                      window.history.pushState({}, "", `/build/${data.id}`);
+                    }
+                  })
+                  .catch((error) => {
+                    console.error(error);
+                  });
+              }}
+            >
+              Save Build
+            </ButtonPrimary>
           )}
         </div>
 
@@ -419,7 +447,7 @@ function calculateSetBonus(monster, set) {
   return bonuses;
 }
 
-export default NewBuild;
+export default Builder;
 
 function calculateBonusStats(key, selectedMonster, statSums, bonuses) {
   const stat = key.slice(0, -1);

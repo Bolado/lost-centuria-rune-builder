@@ -1,4 +1,4 @@
-import { initialBuildState } from "../pages/build/new-build";
+import { initialBuildState } from "../pages/build/builder";
 
 export const serializeBuildState = (state) => {
   // Create minimal representation of state
