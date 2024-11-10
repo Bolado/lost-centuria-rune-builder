@@ -1,23 +1,25 @@
-from flask import redirect, url_for, request, jsonify, make_response
-from functools import wraps
+from flask import Blueprint, url_for, session, make_response, redirect, jsonify, request
+from authlib.integrations.flask_client import OAuth
+from ..config import Config
 from datetime import datetime, timedelta, timezone
 import jwt
-import os
-from ..extensions import oauth
-from ..config import Config
+import uuid
+from functools import wraps
 from . import bp
+from ..extensions import oauth
 
-# OAuth config
-
-oauth.register(
+discord = oauth.register(
     name='discord',
-    client_id= Config.DISCORD_CLIENT_ID,
-    client_secret= Config.DISCORD_CLIENT_SECRET,
-    api_base_url='https://discord.com/api/',
+    client_id=Config.DISCORD_CLIENT_ID,
+    client_secret=Config.DISCORD_CLIENT_SECRET,
     access_token_url='https://discord.com/api/oauth2/token',
+    access_token_params=None,
     authorize_url='https://discord.com/api/oauth2/authorize',
+    authorize_params=None,
+    api_base_url='https://discord.com/api/',
     client_kwargs={
-        'scope': 'identify',
+        'scope': 'identify email',
+        'token_endpoint_auth_method': 'client_secret_post'
     }
 )
 
@@ -43,35 +45,49 @@ def token_required(f):
 
         return f(current_user, *args, **kwargs)
     return decorated
-@bp.route('/login')
+
+@bp.route('/login', methods=['GET'])
 def login():
+    # Generate and store state parameter
+    state = session.get('state', str(uuid.uuid4()))
+    session['state'] = state
+
     redirect_uri = url_for('api.authorize', _external=True)
-    return oauth.discord.authorize_redirect(redirect_uri)
+    return oauth.discord.authorize_redirect(
+        redirect_uri,
+        state=state
+    )
 
 @bp.route('/authorize')
 def authorize():
     try:
-        # Explicitly include state in token verification
-        token = oauth.discord.authorize_access_token()
-        if token is None:
-            raise Exception('Access token not found')
+        # Verify state parameter
+        if request.args.get('state') != session.get('state'):
+            raise ValueError('State mismatch')
 
-        # Get user data
+        token = oauth.discord.authorize_access_token()
         resp = oauth.discord.get('users/@me')
         user_data = resp.json()
 
-        # Create JWT with Config.JWT_SECRET
         jwt_token = jwt.encode({
             'user_id': user_data['id'],
             'username': user_data['username'],
             'email': user_data.get('email'),
-            'exp': datetime.now(timezone.utc) + timedelta(days=1)
+            'exp': datetime.now(timezone.utc) + timedelta(days=7)
         }, Config.JWT_SECRET, algorithm='HS256')
 
-        # Return success response
-        response = make_response(redirect('callback'))
-        response.set_cookie('token', jwt_token)
+        # Clear state after successful authentication
+        session.pop('state', None)
+
+        response = make_response(redirect('/callback'))
+        response.set_cookie('token', jwt_token, httponly=True, secure=True)
         return response
 
+    except ValueError as e:
+        return jsonify({'error': str(e), 'location': 'State verification'}), 400
     except Exception as e:
-        return jsonify({'error': str(e)}), 400
+        return jsonify({
+            'error': str(e),
+            'location': e.__class__.__name__,
+            'details': f'Error occurred in {request.path}'
+        }), 400

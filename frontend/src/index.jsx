@@ -1,16 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import {
-  createBrowserRouter,
-  RouterProvider,
-  redirect,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./css/reset.css";
 import "./css/index.css";
 import App from "./pages/App";
 import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./pages/error-page";
 import Builder from "./pages/build/builder";
+import Callback from "./pages/Callback";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +32,10 @@ const router = createBrowserRouter([
     },
     element: <Builder />,
     errorElement: <ErrorPage />,
+  },
+  {
+    path: "/callback",
+    element: <Callback />,
   },
 ]);
 

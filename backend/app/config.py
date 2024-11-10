@@ -9,3 +9,4 @@ class Config:
     DISCORD_CLIENT_SECRET = os.getenv('DISCORD_CLIENT_SECRET')
     JWT_SECRET = os.getenv('JWT_SECRET')
     SECRET_KEY = os.getenv('SECRET_KEY')
+    SESSION_TYPE = 'filesystem'
