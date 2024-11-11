@@ -46,6 +46,29 @@ def token_required(f):
         return f(current_user, *args, **kwargs)
     return decorated
 
+def token_optional(f):
+    @wraps(f)
+    def decorated(*args, **kwargs):
+        token = None
+        # Check Authorization header
+        if 'Authorization' in request.headers:
+            token = request.headers['Authorization'].split(' ')[1]
+        # Check cookies
+        elif request.cookies.get('token'):
+            token = request.cookies.get('token')
+
+        if not token:
+            return f(None, *args, **kwargs)
+
+        try:
+            data = jwt.decode(token, Config.JWT_SECRET, algorithms=['HS256'])
+            current_user = data
+        except:
+            return jsonify({'message': 'Token is invalid'}), 401
+
+        return f(current_user, *args, **kwargs)
+    return decorated
+
 @bp.route('/login', methods=['GET'])
 def login():
     # Generate and store state parameter

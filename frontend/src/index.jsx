@@ -16,6 +16,15 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
   },
   {
+    path: "/login",
+    loader: async () => {
+      // redirect to /api/login
+      window.location.href = "/api/login";
+      return null;
+    },
+    element: null,
+  },
+  {
     path: "/build/new",
     element: <Builder />,
     errorElement: <ErrorPage />,

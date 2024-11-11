@@ -464,16 +464,6 @@ const saveBuild = async (build) => {
     ? null
     : window.location.pathname.split("/").pop();
 
-  // check if there is a token on cookies and if not open a new tab to login
-  const token = document.cookie
-    .split("; ")
-    .find((row) => row.startsWith("token"))
-    ?.split("=")[1];
-  if (!token) {
-    window.open("/api/login", "_blank");
-    return;
-  }
-
   try {
     const response = await fetch("/api/build/save", {
       method: "POST",
