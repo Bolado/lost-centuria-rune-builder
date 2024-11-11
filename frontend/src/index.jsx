@@ -1,6 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  redirect,
+  RouterProvider,
+} from "react-router-dom";
 import "./css/reset.css";
 import "./css/index.css";
 import App from "./pages/App";
@@ -34,7 +38,8 @@ const router = createBrowserRouter([
     loader: async ({ params }) => {
       const response = await fetch(`/api/build/${params.id}`);
       if (!response.ok) {
-        throw new Error("Network response was not ok");
+        console.error("Build not found");
+        return redirect("/build/new");
       }
       const data = await response.json();
       return data;
