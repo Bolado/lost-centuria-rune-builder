@@ -13,10 +13,10 @@ RUN npm install
 
 COPY backend/ ./
 
-COPY --from=frontend-build /app/frontend/build ./app/static
+COPY --from=frontend-build /app/frontend/build ./static
 
 EXPOSE 3000
 
 ENV STATIC_DIR=/app/static
 
-CMD ["node", "index.js"]
+CMD ["node", "/app/index.js"]
