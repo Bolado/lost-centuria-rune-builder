@@ -303,7 +303,7 @@ function Builder() {
 
       {/* Monster Selection Grid */}
       <div className="m-4 bg-slate-500/10 rounded-md p-4">
-        <div className="w-full flex flex-wrap">
+        <div className="w-full flex flex-wrap justify-center">
           {monsters
             .sort((a, b) => a.name.localeCompare(b.name))
             .map((monster) => (
@@ -315,7 +315,7 @@ function Builder() {
                 <img
                   src={monster.icon}
                   alt={monster.name}
-                  className="w-16 h-22 object-cover"
+                  className="w-16 h-22 object-cover rounded-md"
                 />
                 <div>{monster.name}</div>
               </div>
