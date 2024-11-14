@@ -9,7 +9,7 @@ function App() {
         className="max-w-[50vh] h-auto"
         alt="logo"
       />
-      <h1 className="cinzel text-4xl">
+      <h1 className="cinzel text-4xl text-center">
         Welcome to the Lost Centuria Rune Builder!
       </h1>
 
