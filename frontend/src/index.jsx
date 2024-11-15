@@ -14,6 +14,7 @@ import Builder from "./pages/build/builder";
 import Callback from "./pages/Callback";
 import GlobalHeader from "./components/global-header";
 import { hasTokenCookie } from "./utils/queries";
+import Profile from "./pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,19 @@ const router = createBrowserRouter([
           return null;
         },
         element: null,
+      },
+      {
+        path: "/profile",
+        loader: async () => {
+          const response = await fetch("/api/saved-builds");
+          if (!response.ok) {
+            console.error("Unauthorized");
+            return redirect("/login");
+          }
+          const data = await response.json();
+          return data;
+        },
+        element: <Profile />,
       },
       {
         path: "/build/new",

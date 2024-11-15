@@ -22,20 +22,22 @@ export default function (db) {
     try {
       if (user?.user_id && id) {
         const existingBuild = await db.collection("builds").findOne({
-          _id: new ObjectId(id),
+          _id: id,
         });
 
         if (existingBuild?.user_id === user.user_id) {
           await db
             .collection("builds")
-            .updateOne({ _id: new ObjectId(id) }, { $set: { build } });
+            .updateOne({ _id: id, timestamp: new Date() }, { $set: { build } });
           return res.json({ status: "updated", id });
         }
       }
 
       const result = await db.collection("builds").insertOne({
         build,
-        ...(user ? { user_id: user.user_id } : { timestamp: new Date() }),
+        ...(user
+          ? { user_id: user.user_id, timestamp: new Date() }
+          : { timestamp: new Date() }),
       });
 
       res.json({ status: "created", id: result.insertedId.toString() });
@@ -57,6 +59,21 @@ export default function (db) {
     } catch {
       res.status(404).json({ error: "Build not found" });
     }
+  });
+
+  router.get("/saved-builds", async (req, res) => {
+    const user = getUser(req);
+    if (!user?.user_id) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+
+    const builds = await db
+      .collection("builds")
+      .find({ user_id: user.user_id })
+      .sort({ timestamp: -1 })
+      .toArray();
+
+    res.json(builds);
   });
 
   return router;
