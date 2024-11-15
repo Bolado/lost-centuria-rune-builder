@@ -12,44 +12,55 @@ import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./pages/error-page";
 import Builder from "./pages/build/builder";
 import Callback from "./pages/Callback";
+import GlobalHeader from "./components/global-header";
+import { hasTokenCookie } from "./utils/queries";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <App />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/login",
+    element: <GlobalHeader />,
     loader: async () => {
-      // redirect to /api/login
-      window.location.href = "/api/login";
-      return null;
+      return hasTokenCookie();
     },
-    element: null,
-  },
-  {
-    path: "/build/new",
-    element: <Builder />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "/build/:id",
-    loader: async ({ params }) => {
-      const response = await fetch(`/api/build/${params.id}`);
-      if (!response.ok) {
-        console.error("Build not found");
-        return redirect("/build/new");
-      }
-      const data = await response.json();
-      return data;
-    },
-    element: <Builder />,
-    errorElement: <ErrorPage />,
-  },
-  {
-    path: "/callback",
-    element: <Callback />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/login",
+        loader: async () => {
+          // redirect to /api/login
+          window.location.href = "/api/login";
+          return null;
+        },
+        element: null,
+      },
+      {
+        path: "/build/new",
+        element: <Builder />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/build/:id",
+        loader: async ({ params }) => {
+          const response = await fetch(`/api/build/${params.id}`);
+          if (!response.ok) {
+            console.error("Build not found");
+            return redirect("/build/new");
+          }
+          const data = await response.json();
+          return data;
+        },
+        element: <Builder />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/callback",
+        element: <Callback />,
+      },
+    ],
   },
 ]);
 
