@@ -15,6 +15,7 @@ const PERCENTAGE_STATS = ["acc", "cdd", "cr", "cd", "res", "pen"];
 
 // Initial state structure for a build
 export const initialBuildState = {
+  name: "",
   monster: null,
   currentRuneSlot: 1,
   runeSet: {
@@ -54,6 +55,7 @@ function Builder() {
 
   const [build, setBuild] = React.useState({
     ...initialBuildState,
+    name: `build-${Date.now()}`,
     currentRuneSlot: 1, // Ensure this exists in initial state
   });
 
@@ -237,6 +239,18 @@ function Builder() {
 
         {/* Rune Selection Panel */}
         <div className="lg:basis-2/3 bg-slate-500/10 m-4 p-4 rounded-md flex flex-wrap justify-center">
+          <div className="w-full justify-center flex flex-col">
+            <p className="block font-bold text-lg text-center">Build Name:</p>
+            <input
+              className="p-2 rounded-md text-black font-bold mx-auto text-center"
+              type="text"
+              value={build.name}
+              placeholder="Enter build name"
+              onChange={(e) =>
+                setBuild((prev) => ({ ...prev, name: e.target.value }))
+              }
+            />
+          </div>
           <div className="flex flex-row gap-2 mb-4 w-full">
             <div className="basis-1/2">
               <p className="block font-bold text-lg">Rune Set:</p>
