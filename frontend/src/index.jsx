@@ -41,7 +41,7 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         loader: async () => {
-          const response = await fetch("/api/saved-builds");
+          const response = await fetch("/api/build/saved-builds");
           if (!response.ok) {
             console.error("Unauthorized");
             return redirect("/login");
