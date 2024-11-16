@@ -22,13 +22,19 @@ export default function (db) {
     try {
       if (user?.user_id && id) {
         const existingBuild = await db.collection("builds").findOne({
-          _id: id,
+          _id: ObjectId.createFromHexString(id),
         });
 
         if (existingBuild?.user_id === user.user_id) {
-          await db
-            .collection("builds")
-            .updateOne({ _id: id, timestamp: new Date() }, { $set: { build } });
+          await db.collection("builds").updateOne(
+            { _id: ObjectId.createFromHexString(id) },
+            {
+              $set: {
+                build,
+                timestamp: new Date(),
+              },
+            }
+          );
           return res.json({ status: "updated", id });
         }
       }
@@ -46,21 +52,6 @@ export default function (db) {
     }
   });
 
-  router.get("/:id", async (req, res) => {
-    try {
-      const build = await db.collection("builds").findOne({
-        _id: new ObjectId(req.params.id),
-      });
-
-      if (build) {
-        return res.json(build.build);
-      }
-      res.status(404).json({ error: "Build not found" });
-    } catch {
-      res.status(404).json({ error: "Build not found" });
-    }
-  });
-
   router.get("/saved-builds", async (req, res) => {
     const user = getUser(req);
     if (!user?.user_id) {
@@ -74,6 +65,21 @@ export default function (db) {
       .toArray();
 
     res.json(builds);
+  });
+
+  router.get("/:id", async (req, res) => {
+    try {
+      const build = await db.collection("builds").findOne({
+        _id: ObjectId.createFromHexString(req.params.id),
+      });
+
+      if (build) {
+        return res.json(build.build);
+      }
+      res.status(404).json({ error: "Build not found" });
+    } catch {
+      res.status(404).json({ error: "Build not found" });
+    }
   });
 
   return router;
