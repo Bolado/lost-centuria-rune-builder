@@ -6,8 +6,12 @@ const GlobalHeader = () => {
   const logged = useLoaderData();
   return (
     <>
-      <header className="flex justify-between items-center p-3">
-        <h1 className="cinzel text-xl">SW:LC Rune Builder</h1>
+      <header className="flex justify-between items-center p-3 bg-slate-500/10">
+        <Link to="/build/new">
+          <h1 className="cinzel text-xl text-bold">
+            SW:Lost Centuria Rune Builder
+          </h1>
+        </Link>
         {logged ? (
           <Link to="/profile">
             <ProfileButton />
