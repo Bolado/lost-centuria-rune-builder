@@ -11,8 +11,14 @@ const Profile = () => {
           // deserialize the build object
           const b = deserializeBuildState(build.build);
           return (
-            <li key={build._id}>
-              <Link to={`/build/${build._id}`}>{b.name}</Link>
+            <li
+              className="p-2 m-2 hover:bg-blue-500/30 rounded-md"
+              key={build._id}
+            >
+              <Link to={`/build/${build._id}`}>
+                <h3 className="cinzel text-xl font-bold mr-4 ">{b.name}</h3>
+                <h3 className="text-md mr-4">Monster: {b.monster.name}</h3>
+              </Link>
             </li>
           );
         })}
