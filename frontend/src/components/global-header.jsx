@@ -3,13 +3,12 @@ import { Link, Outlet, useLoaderData } from "react-router-dom";
 
 const GlobalHeader = () => {
   // get loader data from the router
-  const data = useLoaderData();
-
+  const logged = useLoaderData();
   return (
     <>
       <header className="flex justify-between items-center p-3">
         <h1 className="cinzel text-xl">SW:LC Rune Builder</h1>
-        {data?.logged ? (
+        {logged ? (
           <Link to="/profile">
             <ProfileButton />
           </Link>

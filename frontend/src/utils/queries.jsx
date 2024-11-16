@@ -1,9 +1,11 @@
-export function hasTokenCookie() {
-  const cookies = document.cookie.split(";");
-  for (let cookie of cookies) {
-    if (cookie.trim().startsWith("token=")) {
-      return true;
-    }
-  }
-  return false;
+// Use endpoint /api/status to check if the user is logged in
+export async function hasTokenCookie() {
+  return fetch("/api/status")
+    .then((response) => {
+      if (response.ok) {
+        return true;
+      }
+      return false;
+    })
+    .catch(() => false);
 }
