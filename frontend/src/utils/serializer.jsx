@@ -3,6 +3,9 @@ import { initialBuildState } from "../pages/build/builder";
 export const serializeBuildState = (state) => {
   // Create minimal representation of state
   const compressedState = {
+    // Build name
+    n: state.name,
+
     // Monster ID only
     m: state.monster,
 
@@ -46,6 +49,11 @@ export const deserializeBuildState = (
 
     // Create a deep clone of the base state
     const state = JSON.parse(JSON.stringify(baseState));
+
+    // Update name if present in decoded data
+    if (decoded.n) {
+      state.name = decoded.n;
+    }
 
     // Update monster if present in decoded data
     if (decoded.m) {
