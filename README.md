@@ -8,6 +8,7 @@ A web app for **Summoners War: Lost Centuria** players, enabling them to experim
 - **TailwindCSS**
 - **Express.js**
 - **MongoDB**
+- **Docker**
 
 ## Project Goals
 
@@ -17,6 +18,6 @@ A web app for **Summoners War: Lost Centuria** players, enabling them to experim
 | Responsive Design  | ✅      |
 | Build Sharing      | ✅      |
 | Build Editing      | ✅      |
-| Build Profile      | ⌛      |
-| Docker Image       | ⌛      |
-| Deployment         | ⌛      |
+| Build Profile      | ✅      |
+| Docker Image       | ✅      |
+| Deployment         | ✅      |
