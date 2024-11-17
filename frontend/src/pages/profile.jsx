@@ -6,7 +6,7 @@ const Profile = () => {
   return (
     <div className="max-w-7xl mx-auto">
       <h2 className="cinzel text-4xl text-center my-8">Your Builds</h2>
-      <ul>
+      <ul className="flex flex-wrap justify-center">
         <BuildsList builds={builds} />
       </ul>
     </div>
@@ -19,12 +19,28 @@ const BuildsList = ({ builds }) => {
     const b = deserializeBuildState(build.build);
     return (
       <li
-        className={`p-2 m-2 hover:bg-slate-500/30 rounded-md bg-slate-500/10 `}
+        className={`p-4 m-2 hover:bg-slate-500/30 rounded-md bg-slate-500/10`}
         key={build._id}
       >
-        <Link to={`/build/${build._id}`}>
-          <h3 className="cinzel text-xl font-bold mr-4 ">{b.name}</h3>
-          <h3 className="text-md mr-4">Monster: {b.monster.name}</h3>
+        <Link to={`/build/${build._id}`} className="flex flex-row gap-2">
+          <div>
+            <img
+              src={b.monster.icon}
+              alt={b.monster.name}
+              className="w-20 rounded-md"
+            />
+          </div>
+          <div className="flex justify-between flex-col">
+            <div>
+              <h3 className="cinzel text-xl font-bold">{b.name}</h3>
+              <h3 className="text-md">Monster: {b.monster.name}</h3>
+            </div>
+            <div>
+              <h3 className="text-md">
+                Last Updated: {new Date(build.timestamp).toLocaleString()}
+              </h3>
+            </div>
+          </div>
         </Link>
       </li>
     );
