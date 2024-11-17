@@ -7,11 +7,11 @@ const GlobalHeader = () => {
   return (
     <>
       <header className="flex justify-between items-center p-3 bg-slate-500/10">
-        <Link to="/build/new">
+        <a href="/build/new">
           <h1 className="cinzel text-xl text-bold">
             SW:Lost Centuria Rune Builder
           </h1>
-        </Link>
+        </a>
         {logged ? (
           <Link to="/profile">
             <ProfileButton />
