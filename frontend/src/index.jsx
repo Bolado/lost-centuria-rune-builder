@@ -12,13 +12,13 @@ import reportWebVitals from "./reportWebVitals";
 import ErrorPage from "./pages/error-page";
 import Builder from "./pages/build/builder";
 import Callback from "./pages/Callback";
-import GlobalHeader from "./components/global-header";
+import GlobalHeaderAndFooter from "./components/global-components";
 import { hasTokenCookie } from "./utils/queries";
 import Profile from "./pages/profile";
 
 const router = createBrowserRouter([
   {
-    element: <GlobalHeader />,
+    element: <GlobalHeaderAndFooter />,
     loader: async () => {
       return hasTokenCookie();
     },

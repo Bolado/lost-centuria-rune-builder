@@ -246,6 +246,7 @@ function Builder() {
               type="text"
               value={build.name}
               placeholder="Enter build name"
+              maxLength={25}
               onChange={(e) =>
                 setBuild((prev) => ({ ...prev, name: e.target.value }))
               }
