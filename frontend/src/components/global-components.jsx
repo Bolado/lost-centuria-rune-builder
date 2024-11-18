@@ -7,7 +7,7 @@ const GlobalHeaderAndFooter = () => {
   return (
     <>
       <header className="flex justify-between items-center p-3 bg-slate-500/10">
-        <a href="/build/new">
+        <a href="/">
           <h1 className="cinzel text-xl text-bold">
             SW:Lost Centuria Rune Builder
           </h1>
