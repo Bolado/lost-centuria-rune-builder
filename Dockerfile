@@ -1,11 +1,11 @@
-FROM node:lts-slim as frontend-build
+FROM node:18-buster-slim as frontend-build
 WORKDIR /app/frontend
 COPY frontend/package*.json ./
 RUN npm install
 COPY frontend/ ./
 RUN npm run build
 
-FROM node:lts-slim
+FROM node:18-buster-slim
 WORKDIR /app
 
 COPY backend/package*.json ./
