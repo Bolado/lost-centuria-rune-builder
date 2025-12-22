@@ -4,16 +4,14 @@ A web app for **Summoners War: Lost Centuria** players, enabling them to experim
 
 ## Tech Stack
 
-- **React**
-- **TailwindCSS**
-- **Express.js**
-- **MongoDB**
-- **Docker**
+- **Frontend**: React 18 + Vite + TailwindCSS + React Router v6
+- **Backend**: Express.js (ES modules) + MongoDB
+- **Build**: Docker multi-stage build
 
 ## Project Goals
 
 | Goal               | Status |
-|--------------------|--------|
+|:--------------------|:--------:|
 | Core Functionality | ✅      |
 | Responsive Design  | ✅      |
 | Build Sharing      | ✅      |
