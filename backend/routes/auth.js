@@ -66,14 +66,25 @@ router.get("/authorize", async (req, res) => {
   }
 });
 
-// This route is used to check if the user is logged in (wip , have to check if the token is valid)
+// This route is used to check if the user is logged in
 router.get("/status", (req, res) => {
   const token = req.cookies.token;
   if (!token) {
     return res.status(401).json({ error: "Unauthorized" });
   }
 
-  return res.json({ status: "logged in" });
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
+    return res.json({
+      status: "logged in",
+      user: {
+        id: decoded.user_id,
+        username: decoded.username
+      }
+    });
+  } catch (error) {
+    return res.status(401).json({ error: "Invalid or expired token" });
+  }
 });
 
 export default router;
