@@ -13,7 +13,7 @@ RUN npm install
 
 COPY backend/ ./
 
-COPY --from=frontend-build /app/frontend/build ./static
+COPY --from=frontend-build /app/frontend/dist ./static
 
 EXPOSE 3000
 
