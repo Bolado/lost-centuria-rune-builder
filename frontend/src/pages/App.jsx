@@ -4,6 +4,16 @@ import ButtonPrimary from "../components/button-primary";
 function App() {
   return (
     <div className="flex items-center	justify-center flex-col gap-4 min-h-[calc(100vh-theme(spacing.24))]">
+      {/* Blurred background video for side borders, impact the performance looks quite good */}
+      <video
+        className="w-screen h-screen fixed left-0 top-0 object-cover -z-20 blur-2xl scale-110 opacity-60"
+        src="https://hive-fn.qpyou.cn/webdev/smon/20231103_124021_SX6QW4yK1o.mp4"
+        muted
+        playsInline
+        autoPlay
+        loop
+      />
+      {/* Main video */}
       <video
         className="max-w-[2560px] h-screen fixed left-1/2 top-0 -translate-x-1/2 object-cover -z-10"
         src="https://hive-fn.qpyou.cn/webdev/smon/20231103_124021_SX6QW4yK1o.mp4"
