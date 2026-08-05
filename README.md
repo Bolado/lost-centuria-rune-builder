@@ -2,6 +2,8 @@
 
 A web app for **Summoners War: Lost Centuria** players, enabling them to experiment with various rune combinations and visualize their impact on "monsters".
 
+![Website Screenshot](screenshot.png)
+
 ## Tech Stack
 
 - **Frontend**: React 18 + Vite + TailwindCSS + React Router v6
